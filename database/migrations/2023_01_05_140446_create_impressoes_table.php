@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('total', function (Blueprint $table) {
-            $table->foreignId('solicitacoes')->constrained('solicitacoes');
-            $table->foreignId('id_quant_impress')->constrained('impressoes');
-            $table->foreignId('setor')->constrained('setores');
-            $table->foreignId('id_setor_impress')->constrained('setor_impressoras');
+        Schema::create('impressoes', function (Blueprint $table) {
+            $table->id();
+            $table->integer('quant_impress');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_total');
+        Schema::dropIfExists('impressoes');
     }
 };

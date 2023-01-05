@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\impressoes;
+use App\Models\Impressoes;
 use Illuminate\Http\Request;
 
-class cadastro_impressoes extends Controller
+class ImpressoesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class cadastro_impressoes extends Controller
      */
     public function index()
     {
-        return "oi";
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class cadastro_impressoes extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\impressoes  $impressoes
+     * @param  \App\Models\Impressoes  $impressoes
      * @return \Illuminate\Http\Response
      */
-    public function show(impressoes $impressoes)
+    public function show(Impressoes $impressoes)
     {
         //
     }
@@ -52,10 +52,10 @@ class cadastro_impressoes extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\impressoes  $impressoes
+     * @param  \App\Models\Impressoes  $impressoes
      * @return \Illuminate\Http\Response
      */
-    public function edit(impressoes $impressoes)
+    public function edit(Impressoes $impressoes)
     {
         //
     }
@@ -64,10 +64,10 @@ class cadastro_impressoes extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\impressoes  $impressoes
+     * @param  \App\Models\Impressoes  $impressoes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, impressoes $impressoes)
+    public function update(Request $request, Impressoes $impressoes)
     {
         //
     }
@@ -75,10 +75,10 @@ class cadastro_impressoes extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\impressoes  $impressoes
+     * @param  \App\Models\Impressoes  $impressoes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(impressoes $impressoes)
+    public function destroy(Impressoes $impressoes)
     {
         //
     }

@@ -38,12 +38,12 @@
                             <option>Selecione um setor</option>
 
                             @foreach ($setores as $setor)
-                            <option value="{{ $setor->id }}">{{ $setor->Nome }} - {{ $setor->Sigla }}
+                            <option value="{{ $setor->id }}"> {{ $setor->Sigla }} - {{ $setor->Nome }} - {{ $setor->Impressora}}
                             </option>
                             @endforeach
                         </select>
                     </div>
-                    
+                   
 
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Nome:</label>
                             <input type="text" class="form-control" name="nome" id="exampleFormControlInput1"

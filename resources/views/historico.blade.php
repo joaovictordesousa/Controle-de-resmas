@@ -21,6 +21,10 @@
 
         <a class="btn btn-outline-primary" href="/cadastro" role="button">NOVA SOLICITAÇÃO</a>
         <br><br>
+    <div class="container">
+
+        <a class="btn btn-outline-primary" href="/cadastro" role="button">NOVA IMPRESSÃO</a>
+        <br><br>
 
 
         @if (session('msg'))
@@ -79,6 +83,7 @@
                                 <th>Nome</th>
                                 <th>Matrícula</th>
                                 <th>Setor</th>
+                                <th>Impressora</th>
                                 <th>Quantidade de resmas</th>
                                 <th>Data da solicitação</th>
                             </tr>
@@ -93,6 +98,7 @@
                                     <td value="{{ $solic->id }}">{{ $solic->matricula }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->setores->Nome }} -
                                         {{ $solic->setores->Sigla }}</td>
+                                    <td value="{{ $solic->id }}">{{ $solic->setores->Impressora }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
                                 </tr>

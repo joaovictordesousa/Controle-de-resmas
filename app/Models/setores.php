@@ -11,7 +11,7 @@ class setores extends Model
     use HasFactory;
     protected $table = 'setores';
 
-    protected $fillable = ['Nome', 'Sigla'];
+    protected $fillable = ['Nome', 'Sigla', 'Impressora'];
 
     public function solicitacao(){
 

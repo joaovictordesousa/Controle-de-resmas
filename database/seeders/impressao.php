@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class impressao extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        user::create([
-            'name'=> 'joao',
-            'email'=>'joaovictorsr26@gmail.com',
-            'password'=>'12345678'
+        impressao::create([
+            'impressora'=> 'PRES_ASCOM_EPSON_MONO'
         ]);
     }
 }

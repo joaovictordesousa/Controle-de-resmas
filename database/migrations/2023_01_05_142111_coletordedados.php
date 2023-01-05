@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('impressoes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nome',50);
-            $table->integer('matricula');
-            $table->integer('quant_impress');
-            $table->foreignId('id_setor_impress')->constrained('setor_impressoras');    
+        Schema::create('coletordedados', function (Blueprint $table) {
+            $table->foreignId('solicitacoes_id')->constrained('solicitacoes');
+            $table->foreignId('impressoes_id')->constrained('impressoes');
+            $table->foreignId('setor_id')->constrained('setores');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_impressoes');
+        Schema::dropIfExists('coletordedados');
     }
 };
