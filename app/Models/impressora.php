@@ -4,21 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Solicitacao;
 
-class setores extends Model
+class impressora extends Model
 {
     use HasFactory;
-    protected $table = 'setores';
+    protected $table = 'impressoras';
 
-    protected $fillable = ['Nome', 'Sigla'];
+    protected $fillable = ['impressora'];
 
-    public function solicitacao(){
-
-        return $this->hasMany(Solicitacao::class);
-    }
     public function setores_impressora(){
 
         return $this->hasMany(Setores_impressora::class);
+    }
+    public function impressoes(){
+
+        return $this->hasMany(Impressoes::class);
     }
 }

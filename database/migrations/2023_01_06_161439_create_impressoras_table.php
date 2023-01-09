@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('impressoes', function (Blueprint $table) {
-            $table->id();
-            $table->integer('quant_impress');
-            $table->timestamps();
-        });
-    }
+    Schema::create('impressoras', function (Blueprint $table) {
+        $table->id();
+        $table->string('impressora');
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('impressoes');
+        Schema::dropIfExists('impressoras');
     }
 };

@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('coletordedados', function (Blueprint $table) {
-            $table->foreignId('solicitacoes_id')->constrained('solicitacoes');
-            $table->foreignId('impressoes_id')->constrained('impressoes');
-            $table->foreignId('setor_id')->constrained('setores');
+        Schema::create('setores_impressoras', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('id_setor')->constrained('setores');
+            $table->foreignId('id_impressora')->constrained('impressoras');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coletordedados');
+        Schema::dropIfExists('setores_impressoras');
     }
 };

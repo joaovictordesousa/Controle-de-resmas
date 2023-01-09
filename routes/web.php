@@ -10,6 +10,7 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SolicitacaoController;
 use App\Models\Solicitacao;
 use App\Http\Controllers\TesteController;
+use App\Http\Controllers\ImpressoesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,9 +51,9 @@ Route::group(['middleware' => ['auth.session']], function() {
 
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
-
-  Route::get('/cadastro-impressoes', [cadastro_impressoes::class, 'ajax'])
-  ->name('');
+ 
+  Route::get('/criar-impressao', [ImpressoesController::class, 'create']);
+  
 
 });
 require __DIR__.'/auth.php';

@@ -14,7 +14,7 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-        //
+        return view ('cadastro_impressao');
     }
 
     /**
@@ -22,9 +22,14 @@ class ImpressoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
+        $impressoes = new Impressoes();
+        $impressoes->id_setores_impressoras = $request->input('id_setores_impressoras');
+        $impressoes->quant_impressoes = $request->input('quant_impressoes');
+ 
+        $impressoes->save();
     }
 
     /**
@@ -35,7 +40,14 @@ class ImpressoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_setores_impressoras' => 'required|integer',
+            'quant_impressoes' => 'required|integer',
+        ]);
+
+        Impressoes::create($request->all());
+
+        return redirect()->route('historico')->with('msg','Salvo com sucesso!');
     }
 
     /**
@@ -46,7 +58,7 @@ class ImpressoesController extends Controller
      */
     public function show(Impressoes $impressoes)
     {
-        //
+       
     }
 
     /**

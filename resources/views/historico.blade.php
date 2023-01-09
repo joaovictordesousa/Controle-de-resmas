@@ -20,10 +20,10 @@
     <div class="container">
 
         <a class="btn btn-outline-primary" href="/cadastro" role="button">NOVA SOLICITAÇÃO</a>
-        <br><br>
-    <div class="container">
+        
+    
 
-        <a class="btn btn-outline-primary" href="/cadastro" role="button">NOVA IMPRESSÃO</a>
+        <a class="btn btn-outline-primary" href="/criar-impressao" role="button">NOVA IMPRESSÃO</a>
         <br><br>
 
 
