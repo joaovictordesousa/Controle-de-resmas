@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('setores_impressoras', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_setor')->constrained('setores');
-            $table->foreignId('id_impressora')->constrained('impressoras');
+            $table->foreignId('id_setor')->references('id')->on('setores')
+            ->onDelete('cascade');
+            $table->foreignId('id_impressora')->references('id')->on('impressoras')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

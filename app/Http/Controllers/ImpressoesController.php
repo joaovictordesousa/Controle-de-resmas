@@ -25,11 +25,19 @@ class ImpressoesController extends Controller
     public function create(Request $request)
     {
         
-        $impressoes = new Impressoes();
-        $impressoes->id_setores_impressoras = $request->input('id_setores_impressoras');
-        $impressoes->quant_impressoes = $request->input('quant_impressoes');
+        // $impressoes = new Impressoes();
+        // $impressoes->id_setores_impressoras = $request->input('id_setores_impressoras');
+        // $impressoes->quant_impressoes = $request->input('quant_impressoes');
  
-        $impressoes->save();
+        // $impressoes->save();
+
+        Impressoes::create([
+            'id_setores_impressoras' =>  1,
+            'quant_impressoes' => 10000,
+        ]);
+
+        
+        return ('cadastro_impressao');
     }
 
     /**
