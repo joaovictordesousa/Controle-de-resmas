@@ -25,18 +25,19 @@ class ImpressoesController extends Controller
     public function create(Request $request)
     {
         
-        // $impressoes = new Impressoes();
-        // $impressoes->id_setores_impressoras = $request->input('id_setores_impressoras');
-        // $impressoes->quant_impressoes = $request->input('quant_impressoes');
- 
-        // $impressoes->save();
 
-        Impressoes::create([
-            'id_setores_impressoras' =>  1,
-            'quant_impressoes' => 10000,
-        ]);
+        $impressoes = new Impressoes();
+        $impressoes->id_setores_impressoras = $request->input('id_setores_impressoras');
+        $impressoes->quant_impressoes = $request->input('quant_impressoes');
+       
+        $impressoes->save();
 
-        
+        // Impressoes::create([
+        //     'id_setores_impressoras' =>  1,
+        //     'quant_impressoes' => 10000,
+        // ]);
+
+        // dd($request->all());
         return ('cadastro_impressao');
     }
 
@@ -48,6 +49,8 @@ class ImpressoesController extends Controller
      */
     public function store(Request $request)
     {
+
+        
         $request->validate([
             'id_setores_impressoras' => 'required|integer',
             'quant_impressoes' => 'required|integer',

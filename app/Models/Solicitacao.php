@@ -20,5 +20,3 @@ class Solicitacao extends Model
     return $this->belongsTo(setores::class, 'id_setor' , 'id');
     }
 }
-
-/*protected $fillable = ['id_setor', 'quant_resmas'];*/
