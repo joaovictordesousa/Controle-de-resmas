@@ -16,6 +16,7 @@ class SolicitacaoController extends Controller
      */
     public function index()
     {
+        return view("cadastro-impressao");
     }
 
     /**
@@ -25,11 +26,11 @@ class SolicitacaoController extends Controller
      */
     public function create()
     {
-        $solicitacao = new Solicitacao();
-        $solicitacao->id_setor = $request->input('id_setor');
-        $solicitacao->quant_resmas = $request->input('quant_resmas');
+        // $solicitacao = new Solicitacao();
+        // $solicitacao->id_setor = $request->input('id_setor');
+        // $solicitacao->quant_resmas = $request->input('quant_resmas');
 
-        $solicitacao->save();
+        // $solicitacao->save();
 
         //return view ('historico');
     }
@@ -42,16 +43,16 @@ class SolicitacaoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'id_setor' => 'required|integer',
-            'nome' => 'required',
-            'matricula' => 'required',
-            'quant_resmas' => 'required|integer',
-        ]);
+        // $request->validate([
+        //     'id_setor' => 'required|integer',
+        //     'nome' => 'required',
+        //     'matricula' => 'required',
+        //     'quant_resmas' => 'required|integer',
+        // ]);
 
-        Solicitacao::create($request->all());
+        // Solicitacao::create($request->all());
 
-        return redirect()->route('historico')->with('msg','Salvo com sucesso!');
+        // return redirect()->route('historico')->with('msg','Salvo com sucesso!');
     }
 
     /**

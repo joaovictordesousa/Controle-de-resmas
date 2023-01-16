@@ -27,7 +27,7 @@
                  @endif
 
 
-                {{-- Cadastrar setores --}}
+                {{-- cadastro de impressao --}}
 
                 <form action="{{ route('criar-impressao') }}" method="POST">
                     @csrf

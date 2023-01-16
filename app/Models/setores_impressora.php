@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class setores_impressora extends Model
 {
     use HasFactory;
-    public function impressoes(){
+    protected $table = 'impressoes';
+    protected $fillable = ['impressora', setores];
 
+    public function impressoes(){
         return $this->hasMany(Impressoes::class);
     }
 }

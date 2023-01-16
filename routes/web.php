@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth.session']], function() {
   //Rota criar setor
 
    Route::post('/cadastro-setor', [SolicitacaoController::class, 'store'])
-   ->name('criar-solicitacao');
+   ->name('/criar-solicitacao');
 
   Route::get('/relatorio', [relatorio::class, 'relatorio'])
   ->name('relatorio');
@@ -52,8 +52,15 @@ Route::group(['middleware' => ['auth.session']], function() {
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
  
-  Route::get('/criar-impressao', [ImpressoesController::class, 'create']);
-  
+  Route::get('/criar-impressao', [ImpressoesController::class, 'index'])
+  ->name('cadastro-impressao');
+ 
+  Route::post('/criar-impressao', [ImpressoesController::class, 'create'])
+  ->name('cadastro-impressao');
 
-});
+    });
+
+    Route::get('/teste1', [teste::class, 'index'])
+    ->name('cadastro-impressao')->name('historico');
+
 require __DIR__.'/auth.php';

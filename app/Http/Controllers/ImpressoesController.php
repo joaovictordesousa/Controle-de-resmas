@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Impressoes;
 use Illuminate\Http\Request;
+use App\Models\Setores_impressora;
 
 class ImpressoesController extends Controller
 {
@@ -14,7 +15,7 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-        return view ('cadastro_impressao');
+        return view("cadastro-impressao");
     }
 
     /**
@@ -25,22 +26,23 @@ class ImpressoesController extends Controller
     public function create(Request $request)
     {
         
-
-        $impressoes = new Impressoes();
-        $impressoes->id_setores_impressoras = $request->input('id_setores_impressoras');
-        $impressoes->quant_impressoes = $request->input('quant_impressoes');
+        $post = $request->all();
+        if($post){
+            $impressoes = new Impressoes();
+             
+            $impressoes->id_setores_impressoras = $post['id_setores_impressoras'];
+            $impressoes->quant_impressoes = $post['quant_impressoes'];
+            $impressoes->save();
+            
+    
+             
+        // }
+       // dd($request->all());
        
-        $impressoes->save();
-
-        // Impressoes::create([
-        //     'id_setores_impressoras' =>  1,
-        //     'quant_impressoes' => 10000,
-        // ]);
-
-        // dd($request->all());
-        return ('cadastro_impressao');
+      // return view ('cadastro-impressao');
+        }
     }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
