@@ -34,7 +34,7 @@ class ImpressoesController extends Controller
     foreach ($impressora->setores as $setores) {
         echo $setores->pivot->created_at;
     }
-    echo $impressora;
+    dd( $impressora);
 }
     public function create(Request $request)
     {
