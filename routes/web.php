@@ -11,6 +11,7 @@ use App\Http\Controllers\SolicitacaoController;
 use App\Models\Solicitacao;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\ImpressoesController;
+use App\Http\Controllers\Teste;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::group(['middleware' => ['auth.session']], function() {
   //Rota criar setor
 
    Route::post('/cadastro-setor', [SolicitacaoController::class, 'store'])
-   ->name('/criar-solicitacao');
+   ->name('criar-solicitacao');
 
   Route::get('/relatorio', [relatorio::class, 'relatorio'])
   ->name('relatorio');
@@ -52,15 +53,11 @@ Route::group(['middleware' => ['auth.session']], function() {
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
  
-  Route::get('/criar-impressao', [ImpressoesController::class, 'index'])
-  ->name('cadastro-impressao');
+  Route::get('/criar-impressao', [ImpressoesController::class, 'index'] ,function () {
+    return view('cadastro');});
  
-  Route::post('/criar-impressao', [ImpressoesController::class, 'create'])
-  ->name('cadastro-impressao');
-
-    });
-
-    Route::get('/teste1', [teste::class, 'index'])
-    ->name('cadastro-impressao')->name('historico');
+  Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
 
 require __DIR__.'/auth.php';
+
+  });

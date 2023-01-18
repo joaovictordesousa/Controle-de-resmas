@@ -15,7 +15,7 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-        return view("cadastro-impressao");
+        return view('cadastro_impressao');
     }
 
     /**

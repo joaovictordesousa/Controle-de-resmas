@@ -17,7 +17,7 @@ class impressoraSeeder extends Seeder
     public function run()
     {
         impressora::create([
-            'impressora'=> 'DA_BALANCA_EPSON'
+            'impressora'=> 'DA_BALANCA_EPSON' 
         ]);
 
         impressora::create([
@@ -45,6 +45,10 @@ class impressoraSeeder extends Seeder
         ]);
 
         impressora::create([
+            'impressora'=> 'DA_DEMAP_EPSON'
+        ]);
+
+        impressora::create([
             'impressora'=> 'DA_DIGEP1_EPSON_MONO'
         ]);
 
@@ -54,7 +58,7 @@ class impressoraSeeder extends Seeder
 
         impressora::create([
             'impressora'=> 'DA_DIMAE_EPSON_MONO'
-        ]);
+        ]); 
 
         impressora::create([
             'impressora'=> 'DA_DIOP1_EPSON_MONO'
@@ -73,11 +77,11 @@ class impressoraSeeder extends Seeder
         ]);
 
         impressora::create([
-            'impressora'=> 'DA_EPSON_MONO'         //Mesmo nome
+            'impressora'=> 'DA_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DA_EPSON_MONO'       //Mesmo nome 
+            'impressora'=> 'DA_EPSON_MONO'
         ]);
 
         impressora::create([
@@ -95,13 +99,13 @@ class impressoraSeeder extends Seeder
         impressora::create([
             'impressora'=> 'DE_ASSES_EPSON_MONO'
         ]);
-
+        
         impressora::create([
-            'impressora'=> 'DE_DICOR_EPSON_MONO'    // Na tabela tem dois iguais, 25 linha exel
+            'impressora'=> 'DE_DICOR_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DE_DICOR_EPSON_MONO'  // Na tabela tem dois iguais, 25 linha exel
+            'impressora'=> 'DE_DICOR_EPSON_MONO'
         ]);
 
         impressora::create([
@@ -131,10 +135,11 @@ class impressoraSeeder extends Seeder
         impressora::create([
             'impressora'=> 'DF_DECON_EPSON_MONO'
         ]);
+
         impressora::create([
-            'impressora'=> 'DF_DIFIN_EPSON_MONO'
-        ]);
-        
+            'impressora'=> 'DF_DIFIN_EPSON_MONO' 
+        ]);   
+
         impressora::create([
             'impressora'=> 'DF_DIFIN2_EPSON'
         ]);
@@ -156,99 +161,100 @@ class impressoraSeeder extends Seeder
         ]);
 
         impressora::create([
-            'impressora'=> 'DJ_DIAPO_EPSON_MONO'
+            'impressora' => 'DJ_DIAPO_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIATEC_EPSON_MONO'
+            'impressora' => 'DU_DIATEC_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIAVE_EPSON_MONO'
+            'impressora' => 'DU_DIAVE_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIMAD_EPSON_MONO'
+            'impressora' => 'DU_DIMAD_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIMAV_EPSON_MONO'
+            'impressora' => 'DU_DIMAV_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIMAVE_EPSON_MONO'
+            'impressora' => 'DU_DIMAVE_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIOB_APOIO_EPSON_MONO'
+            'impressora' => 'DU_DIOB_APOIO_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIOB_EPSON_MONO'
+            'impressora' => 'DU_DIOB_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DIOD_EPSON_MONO'
+            'impressora' => 'DU_DIOD_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_DPJ_EPSON_MONO'
+            'impressora' => 'DU_DPJ_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_EPSON_A3_COLOR'
+            'impressora' => 'DU_EPSON_A3_COLOR'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_NUASF_EPSON_MONO'
+            'impressora' => 'DU_NUASF_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_SETOP_EPSON'
-        ]);
-        
-            impressora::create([
-            'impressora'=> 'DU_SETOP_EPSON'     // A impressora de cima esta com o mesmo nome
+            'impressora' => 'DU_SETOP_EPSON' //mesma da de baixo
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_VIVEIRO2_EPSON' 
+            'impressora' => 'DU_SETOP_EPSON' //mesmo da de cima
         ]);
 
         impressora::create([
-            'impressora'=> 'DU_EPSON_MONO' 
+            'impressora' => 'DU_VIVEIRO2_EPSON'
         ]);
 
         impressora::create([
-            'impressora'=> 'PRESS_COOP_EPSON' 
+            'impressora' => 'DU_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'PRES_OUVIDORIA_EPSON_MONO' 
+            'impressora' => 'PRES_ASCOM_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'PRES_EPSON_A3_COLOR' 
+            'impressora' => 'DA_DIMAE2_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'PRES_CPPAD_EPSON' 
+            'impressora' => 'PRES_AUDIT_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'PRES_CORREDOR_EPSON_MONO' 
+            'impressora' => 'PRES_CORREDOR_EPSON_MONO'
         ]);
 
         impressora::create([
-            'impressora'=> 'PRES_AUDIT_EPSON_MONO' 
+            'impressora' => 'PRES_CPPAD_EPSON'
         ]);
 
         impressora::create([
-            'impressora'=> 'DA_DIMAE2_EPSON_MONO' 
+            'impressora' => 'PRES_EPSON_A3_COLOR'
         ]);
 
         impressora::create([
-            'impressora'=> 'PRES_ASCOM_EPSON_MONO' 
+            'impressora' => 'PRES_OUVIDORIA_EPSON_MONO'
         ]);
+
+        impressora::create([
+            'impressora' => 'PRESS_COOP_EPSON'
+        ]);
+
     }
 }

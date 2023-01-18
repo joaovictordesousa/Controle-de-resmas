@@ -29,7 +29,7 @@
 
                 {{-- cadastro de impressao --}}
 
-                <form action="{{ route('criar-impressao') }}" method="POST">
+              {{-- {{  echo Form::open(array('route' => 'criar-impressao')) }} --}}
                     @csrf
                     <div class="form-group">
                         
@@ -63,9 +63,9 @@
                         </div>
                     </div>
             </div>
-            </form>
+            {{-- {{ Form::close() }} --}}
             </p>
         </div>
     </div>
 </div>
-@endsection
+@endsection 

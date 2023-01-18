@@ -29,7 +29,7 @@
 
                 {{-- Cadastrar setores --}}
 
-                <form action="{{ route('criar-solicitacao') }}" method="POST">
+                 <form action="{{ route('criar-solicitacao') }}" method="POST"> 
                     @csrf
                     <div class="form-group">
                         
