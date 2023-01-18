@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Solicitacao;
+use App\Models\Impressora;
 
 class setores extends Model
 {
@@ -17,8 +18,12 @@ class setores extends Model
 
         return $this->hasMany(Solicitacao::class);
     }
-    public function setores_impressora(){
+    public function impressora(){
 
-        return $this->hasMany(Setores_impressora::class);
+        return $this->belongsToMany(impressora::class, 'setores_impressora');
     }
+
+
+
+    
 }

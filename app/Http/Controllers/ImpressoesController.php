@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Impressoes;
 use Illuminate\Http\Request;
 use App\Models\Setores_impressora;
+use App\Models\Impressora;
+use App\Models\Setores;
+
 
 class ImpressoesController extends Controller
 {
@@ -16,6 +19,8 @@ class ImpressoesController extends Controller
     public function index()
     {
         return view('cadastro_impressao');
+
+
     }
 
     /**
@@ -23,26 +28,34 @@ class ImpressoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function impressorateste(){
+        $impressora = Impressora::find(1);
+
+    foreach ($impressora->setores as $setores) {
+        echo $setores->pivot->created_at;
+    }
+    echo $impressora;
+}
     public function create(Request $request)
     {
-        
+
         $post = $request->all();
         if($post){
             $impressoes = new Impressoes();
-             
+
             $impressoes->id_setores_impressoras = $post['id_setores_impressoras'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
-            
-    
-             
+
+
+
         // }
        // dd($request->all());
-       
+
       // return view ('cadastro-impressao');
         }
     }
- 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -52,7 +65,7 @@ class ImpressoesController extends Controller
     public function store(Request $request)
     {
 
-        
+
         $request->validate([
             'id_setores_impressoras' => 'required|integer',
             'quant_impressoes' => 'required|integer',
@@ -71,7 +84,7 @@ class ImpressoesController extends Controller
      */
     public function show(Impressoes $impressoes)
     {
-       
+
     }
 
     /**
