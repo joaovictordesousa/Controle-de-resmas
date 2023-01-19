@@ -50,6 +50,7 @@ Route::group(['middleware' => ['auth.session']], function() {
   Route::get('/search', [historico::class, 'ajax'])
   ->name('posts.search');
 
+
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
  
@@ -57,6 +58,7 @@ Route::group(['middleware' => ['auth.session']], function() {
     return view('cadastro');});
  
   Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
+  
 
 require __DIR__.'/auth.php';
 

@@ -86,11 +86,10 @@
                                 <th>Impressora</th>
                                 <th>Quantidade de resmas</th>
                                 <th>Data da solicitação</th>
+                                <th id="ediatr">...</th>
                             </tr>
                         </thead>
                         <tbody>
-
-
                             @foreach ($solicitacao as $solic)
                                 <tr>
                                     <td value="{{ $solic->id }}">{{ $solic->id }}</td>
@@ -101,6 +100,11 @@
                                     <td value="{{ $solic->id }}">{{ $solic->setores->Impressora }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
+
+                                    <td> <form action="{{route('historico')}}" method="DELETE">
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger">Deletar</button>
+                                    </form></td>
                                 </tr>
                             @endforeach
 

@@ -96,6 +96,10 @@ class SolicitacaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $solicitacao = Solicitacao::findOrFail($id);
+        $solicitacao-> delete(); 
+
+        return "Solicitação excluida";
     }
 }
+
