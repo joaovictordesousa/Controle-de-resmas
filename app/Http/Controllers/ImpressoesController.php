@@ -43,7 +43,7 @@ class ImpressoesController extends Controller
         if($post){
             $impressoes = new Impressoes();
 
-            $impressoes->impressora = $post['impressora'];
+            $impressoes->setores_impressora = $post['id_setores_impressora'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
 
@@ -73,7 +73,7 @@ class ImpressoesController extends Controller
 
 
         $request->validate([
-            'impressora' => 'required|integer',
+            'id_setores_impressora' => 'required|integer',
             'quant_impressoes' => 'required|integer',
         ]);
 

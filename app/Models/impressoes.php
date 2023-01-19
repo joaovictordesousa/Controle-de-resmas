@@ -14,9 +14,9 @@ class impressoes extends Model
 
     public function setores_impressora(){
 
-    return $this->belongsToMany(Setores_impressora::class, 'id_setores_impressoras' , 'id');
+    return $this->belongsTo(Setores_impressora::class, 'id_setores_impressoras' , 'id');
     }
 
-   
+
 
 }
