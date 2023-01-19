@@ -22,8 +22,4 @@ class setores extends Model
 
         return $this->belongsToMany(impressora::class, 'setores_impressora');
     }
-
-
-
-    
 }

@@ -15,7 +15,4 @@ class impressora extends Model
 
         return $this->belongsToMany(Setores::class, 'setores_impressora','id_setor','id_impressora');
     }
-
-
-
 }
