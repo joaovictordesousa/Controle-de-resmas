@@ -23,27 +23,28 @@
                         <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div> 
+                </div>
                  @endif
 
 
                 {{-- cadastro de impressao --}}
 
-              {{-- {{  echo Form::open(array('route' => 'criar-impressao')) }} --}}
+                <form action="{{ route('cadastro-de-impressao') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        
+
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Impressora:</label>
-                        <select class="form-control" name="id_setores_impressoras" id="id_setores_impressoras">
+                        <select class="form-control" name="impressora" id="impressora">
                             <option>Selecione a Impressora</option>
 
-                            {{-- @foreach ($setores as $setor)
-                            <option value="{{ $setor->id }}"> {{ $setor->Sigla }} - {{ $setor->Nome }}
+                            @foreach ($impress as $impressora)
+                            <option value="{{ $impressora->id }}"> {{ $impressora->impressora }}
                             </option>
-                            @endforeach --}}
+                            @endforeach
+                            <option value="1">1</option>
                         </select>
                     </div>
-                    
+
                    {{-- cadastro de Impressões --}}
 
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Quantidade de Impressões:</label>
@@ -63,9 +64,9 @@
                         </div>
                     </div>
             </div>
-            {{-- {{ Form::close() }} --}}
+            </form>
             </p>
         </div>
     </div>
 </div>
-@endsection 
+@endsection

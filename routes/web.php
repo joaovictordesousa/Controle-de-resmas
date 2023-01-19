@@ -9,9 +9,7 @@ use App\Http\Controllers\relatorio;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SolicitacaoController;
 use App\Models\Solicitacao;
-use App\Http\Controllers\TesteController;
 use App\Http\Controllers\ImpressoesController;
-use App\Http\Controllers\Teste;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,11 +50,12 @@ Route::group(['middleware' => ['auth.session']], function() {
 
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
- 
+
   Route::get('/criar-impressao', [ImpressoesController::class, 'index'] ,function () {
     return view('cadastro');});
- 
-  Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
+
+  Route::post('/criar-impressao', [ImpressoesController::class, 'store'])
+  ->name('cadastro-de-impressao');
 
 require __DIR__.'/auth.php';
 

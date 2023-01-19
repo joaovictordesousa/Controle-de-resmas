@@ -28,14 +28,14 @@ class ImpressoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function impressorateste(){
-        $impressora = Impressora::find(1);
+    // public function impressorateste(){
+    //     $impressora = Impressora::find(1);
 
-    foreach ($impressora->setores as $setores) {
-        echo $setores->pivot->created_at;
-    }
-    dd( $impressora);
-}
+    // foreach ($impressora->setores as $setores) {
+    //     echo $setores->pivot->created_at;
+    // }
+    // dd( $impressora);
+    // }
     public function create(Request $request)
     {
 
@@ -43,7 +43,7 @@ class ImpressoesController extends Controller
         if($post){
             $impressoes = new Impressoes();
 
-            $impressoes->id_setores_impressoras = $post['id_setores_impressoras'];
+            $impressoes->impressora = $post['impressora'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
 
@@ -54,6 +54,12 @@ class ImpressoesController extends Controller
 
       // return view ('cadastro-impressao');
         }
+    }
+    public function cadastro_impressao(Request $request){
+
+        $impressoras = Impressora::orderby('id')->get();
+
+        return view ('cadastro_impressao', compact ('impress'));
     }
 
     /**
@@ -67,7 +73,7 @@ class ImpressoesController extends Controller
 
 
         $request->validate([
-            'id_setores_impressoras' => 'required|integer',
+            'impressora' => 'required|integer',
             'quant_impressoes' => 'required|integer',
         ]);
 

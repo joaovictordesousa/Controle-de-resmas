@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Models\Impressora;
 use App\Models\Setores;
 
 
@@ -17,5 +17,4 @@ class cadastro extends Controller
 
         return view ('cadastro', compact ('setores'));
     }
-   
 }
