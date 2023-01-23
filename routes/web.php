@@ -54,10 +54,9 @@ Route::group(['middleware' => ['auth.session']], function() {
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
  
-  Route::get('/criar-impressao', [ImpressoesController::class, 'index'] ,function () {
-    return view('cadastro');});
+  Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
  
-  Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
+  Route::post('/post-impressao', [ImpressoesController::class, 'index'])->name('post.impressao');
   
 
 require __DIR__.'/auth.php';

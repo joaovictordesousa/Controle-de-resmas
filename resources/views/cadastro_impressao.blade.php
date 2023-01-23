@@ -29,26 +29,27 @@
 
                 {{-- cadastro de impressao --}}
 
-              {{-- {{  echo Form::open(array('route' => 'criar-impressao')) }} --}}
+                    <form action="{{ route('post.impressao') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         
-                        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Impressora:</label>
-                        <select class="form-control" name="id_setores_impressoras" id="id_setores_impressoras">
-                            <option>Selecione a Impressora</option>
+                        <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Impressoras e Quantidades:</label>
+                        <select class="form-control" name="id_setores" id="id_setores">
+                            <option>Selecione a Impressora e o Setor</option>
 
-                            {{-- @foreach ($setores as $setor)
-                            <option value="{{ $setor->id }}"> {{ $setor->Sigla }} - {{ $setor->Nome }}
+                            @foreach ($id_setores as $setor)
+                            <option value="{{ $setor->id }}">{{ $setor->Sigla }} &nbsp  {{ $setor->Nome }} &nbsp  -  &nbsp {{$setor->Impressora}}
                             </option>
-                            @endforeach --}}
+                            @endforeach
+                            
                         </select>
                     </div>
                     
                    {{-- cadastro de Impressões --}}
-
+                                    <br>
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Quantidade de Impressões:</label>
-                            <input type="text" class="form-control" name="quant_impressoes" id="quant_impressoes"
-                                placeholder="Digite a quantidade de impressões...">
+                            <br>
+                            <input type="number" class="form-group" name="quant_impressoes" id="quant_impressoes" placeholder="Digite a quantidade" style="border-radius: 5px;">
 
 
                     {{-- Cadastrar quant. resmas --}}
@@ -63,7 +64,7 @@
                         </div>
                     </div>
             </div>
-            {{-- {{ Form::close() }} --}}
+            </form>
             </p>
         </div>
     </div>

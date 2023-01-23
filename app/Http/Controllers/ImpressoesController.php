@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Impressoes;
 use Illuminate\Http\Request;
-use App\Models\Setores_impressora;
+use App\Models\Setores;
 
 class ImpressoesController extends Controller
 {
@@ -15,7 +15,10 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-        return view('cadastro_impressao');
+        // declarar as variaveis passando para a view
+        $id_setores = Setores::get();
+            return view('cadastro_impressao', ['id_setores' => $id_setores]);    
+        
     }
 
     /**
@@ -30,11 +33,9 @@ class ImpressoesController extends Controller
         if($post){
             $impressoes = new Impressoes();
              
-            $impressoes->id_setores_impressoras = $post['id_setores_impressoras'];
+            $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
-            $impressoes->save();
-            
-    
+            $impressoes->save();  
              
         // }
        // dd($request->all());
@@ -54,8 +55,8 @@ class ImpressoesController extends Controller
 
         
         $request->validate([
-            'id_setores_impressoras' => 'required|integer',
-            'quant_impressoes' => 'required|integer',
+            'id_setores' => 'required|integer',
+            'quant_impressoes' => 'required|'
         ]);
 
         Impressoes::create($request->all());

@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('impressoes', function (Blueprint $table) {
             $table->id();
             $table->string('quant_impressoes');
-            $table->foreignId('id_setores_impressoras')->contraint();
-            $table->foreignId('id_setoresimpressora')->contraint();
+            $table->foreignId('id_setores')->contraint()->references('id')->on('setores');
+            // $table->foreignId('id_setoresimpressora')->contraint();
             $table->timestamps();
         });
     }

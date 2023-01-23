@@ -38,7 +38,7 @@
                             <option>Selecione um setor</option>
 
                             @foreach ($setores as $setor)
-                            <option value="{{ $setor->id }}"> {{ $setor->Sigla }} - {{ $setor->Nome }}
+                            <option value="{{ $setor->id }}"> {{ $setor->Sigla }} &nbsp  {{ $setor->Nome }} &nbsp  -  &nbsp {{$setor->Impressora}}
                             </option>
                             @endforeach
                         </select>

@@ -26,7 +26,6 @@
         <a class="btn btn-outline-primary" href="/criar-impressao" role="button">NOVA IMPRESSÃO</a>
         <br><br>
 
-
         @if (session('msg'))
             <div class="alert alert-success" role="alert"style="width: 1200px;">
                 <p class="msg">
@@ -54,7 +53,7 @@
                             <option>Selecione um setor</option>
 
                             @foreach ($setores as $setor)
-                            <option value="{{ $setor->id }}">{{ $setor->Nome }} - {{ $setor->Sigla }}
+                            <option value="{{ $setor->id }}">{{ $setor->Sigla }} &nbsp  {{ $setor->Nome }} &nbsp  -  &nbsp {{$setor->Impressora}}
                             </option>
                             @endforeach
                         </select>
@@ -86,7 +85,9 @@
                                 <th>Impressora</th>
                                 <th>Quantidade de resmas</th>
                                 <th>Data da solicitação</th>
-                                <th id="ediatr">...</th>
+
+                                {{-- <th id="ediatr">...</th> --}}
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -101,10 +102,10 @@
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
 
-                                    <td> <form action="{{route('historico')}}" method="DELETE">
+                                    {{-- <td> <form action="{{route('historico')}}" method="DELETE">
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger">Deletar</button>
-                                    </form></td>
+                                    </form></td> --}}
                                 </tr>
                             @endforeach
 
@@ -121,3 +122,4 @@
 
 
             @endsection
+

@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             setoresSeeder::class,
-            impressoraSeeder::class,
-            setoresimpressoraSeeder::class,
+            // impressoraSeeder::class,
+            // setoresimpressoraSeeder::class,
             // UserSeeder::class
         ]);
 

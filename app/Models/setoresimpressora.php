@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class setoresimpressora extends Model
 {
-    use HasFactory;
-    protected $table = 'setoresimpressoras';
-    protected $fillable = ['nome', 'sigla','impressora'];
+    // use HasFactory;
+    // protected $table = 'setoresimpressoras';
+    // protected $fillable = ['nome', 'sigla','impressora'];
 }

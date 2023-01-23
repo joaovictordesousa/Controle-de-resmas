@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('setoresimpressora', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
-            $table->string('sigla');
-            $table->string('impressora');
-            $table->timestamps();
-        });
+        // Schema::create('setoresimpressora', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('nome');
+        //     $table->string('sigla');
+        //     $table->string('impressora');
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -27,8 +27,8 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('setoresimpressora');
-    }
+    // public function down()
+    // {
+    //     Schema::dropIfExists('setoresimpressora');
+    // }
 };

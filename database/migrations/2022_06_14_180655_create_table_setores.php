@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('Nome');
             $table->string('Sigla');
+            $table->string('Impressora');
             $table->timestamps();
         });
     }
