@@ -56,7 +56,8 @@ Route::group(['middleware' => ['auth.session']], function() {
  
   Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
  
-  Route::post('/post-impressao', [ImpressoesController::class, 'index'])->name('post.impressao');
+  Route::post('/criar-impressao', [ImpressoesController::class, 'store'])->name('criar-impressao' ,function () {
+    return view('historico');});
   
 
 require __DIR__.'/auth.php';

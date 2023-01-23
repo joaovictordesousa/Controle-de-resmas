@@ -35,8 +35,7 @@ class ImpressoesController extends Controller
              
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
-            $impressoes->save();  
-             
+            $impressoes->save();             
         // }
        // dd($request->all());
        
@@ -56,7 +55,7 @@ class ImpressoesController extends Controller
         
         $request->validate([
             'id_setores' => 'required|integer',
-            'quant_impressoes' => 'required|'
+            'quant_impressoes' => 'required|integer'
         ]);
 
         Impressoes::create($request->all());

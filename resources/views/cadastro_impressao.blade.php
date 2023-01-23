@@ -29,7 +29,7 @@
 
                 {{-- cadastro de impressao --}}
 
-                    <form action="{{ route('post.impressao') }}" method="POST">
+                    <form  action="/criar-impressao" method="POST">
                     @csrf
                     <div class="form-group">
                         

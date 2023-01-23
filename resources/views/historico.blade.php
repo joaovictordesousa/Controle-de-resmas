@@ -78,12 +78,13 @@
                     <table class="table table-hover" id="table">
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
-                                <th>Número de solicitação</th>
+                                <th>Solicitação</th>
                                 <th>Nome</th>
                                 <th>Matrícula</th>
                                 <th>Setor</th>
                                 <th>Impressora</th>
                                 <th>Quantidade de resmas</th>
+                                <th>Impressões</th>
                                 <th>Data da solicitação</th>
 
                                 {{-- <th id="ediatr">...</th> --}}
@@ -91,7 +92,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($solicitacao as $solic)
+                            @foreach ($solicitacao as $solic) 
                                 <tr>
                                     <td value="{{ $solic->id }}">{{ $solic->id }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->nome }}</td>
@@ -100,7 +101,10 @@
                                         {{ $solic->setores->Sigla }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->setores->Impressora }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
+                                    @foreach ($impressoes as $impress) <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
+                                    @endforeach
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
+
 
                                     {{-- <td> <form action="{{route('historico')}}" method="DELETE">
                                         @method('delete')

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Solicitacao;
 use App\Models\setores;
+use App\Models\Impressoes;
 
 
 
@@ -15,6 +16,7 @@ class historico extends Controller
   public function show(Request $request, Solicitacao $solicitacao)
   {                                                                                                                                                                                                                                                                                                                    
     
+    $impressoes = Impressoes::get();
 
     $setores = setores::orderby('id')->get();
 
@@ -45,7 +47,7 @@ class historico extends Controller
   //$setor = $solicitacao->paginate(10);
 
     //return view('historico', ['solicitacao' => $solicitacao], ['setores' => $setores], ['search' => $search]);
-    return view('historico', ['solicitacao' => $solicitacao], ['setores' => $setores]);
+    return view('historico', ['solicitacao' => $solicitacao], ['setores' => $setores] , ['impressoes' => $impressoes]);
   }
   /*public function search(Request $request)
     {
