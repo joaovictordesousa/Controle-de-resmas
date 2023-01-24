@@ -56,6 +56,11 @@
                     Controle de resmas e impressões
                 </a>
                 <ul class="nav justify-content-end">
+                    {{-- nova view --}}
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/historico-impressoes">Impressão</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/cadastro">Solicitação</a>
                     </li>

@@ -12,6 +12,7 @@ use App\Models\Solicitacao;
 use App\Http\Controllers\TesteController;
 use App\Http\Controllers\ImpressoesController;
 use App\Http\Controllers\Teste;
+use App\Http\Controllers\historico_impressaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,9 @@ Route::group(['middleware' => ['auth.session']], function() {
  
   Route::post('/criar-impressao', [ImpressoesController::class, 'store'])->name('criar-impressao' ,function () {
     return view('historico');});
+
+  Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])->name('historico.impressao', function () {
+    return view('historico-impressao');});
   
 
 require __DIR__.'/auth.php';
