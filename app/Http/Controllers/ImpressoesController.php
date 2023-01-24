@@ -50,9 +50,7 @@ class ImpressoesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-
-        
+    { 
         $request->validate([
             'id_setores' => 'required|integer',
             'quant_impressoes' => 'required|integer'
@@ -71,7 +69,7 @@ class ImpressoesController extends Controller
      */
     public function show(Impressoes $impressoes)
     {
-       
+        
     }
 
     /**

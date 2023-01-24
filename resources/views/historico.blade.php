@@ -92,28 +92,43 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            {{-- @if ($impresso < $solicitac ){ --}}
+
                             @foreach ($solicitacao as $solic) 
                                 <tr>
                                     <td value="{{ $solic->id }}">{{ $solic->id }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->matricula }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->setores->Nome }} -
-                                        {{ $solic->setores->Sigla }}</td>
+                                    <td value="{{ $solic->id }}">{{ $solic->setores->Nome }} - {{ $solic->setores->Sigla }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->setores->Impressora }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
-                                    @foreach ($impressoes as $impress) <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
-                                    @endforeach
+                                    <td></td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
-
 
                                     {{-- <td> <form action="{{route('historico')}}" method="DELETE">
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger">Deletar</button>
                                     </form></td> --}}
                                 </tr>
+
                             @endforeach
+                            {{-- }@else{ --}}
+                            @foreach ($impressoes as $impress) 
+                            <tr>
+                                <td value="{{$impress->id }}">{{$impress->id}}</td>
+                                <td></td>
+                                <td></td>
+                                <td value="{{$impress->id }}">{{$impress->setores->Nome}} - {{$impress->setores->Sigla}}</td>
+                                <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
+                                <td></td>
+                                <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>  
+                                <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
+                            </tr>     
+                            @endforeach
+                        {{-- }@endif --}}
 
-
+                            
                         </tbody>
                     </table>
 

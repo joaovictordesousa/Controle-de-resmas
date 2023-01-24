@@ -16,7 +16,10 @@ class historico extends Controller
   public function show(Request $request, Solicitacao $solicitacao)
   {                                                                                                                                                                                                                                                                                                                    
     
-    $impressoes = Impressoes::get();
+    $impressoes = Impressoes::orderby('id')->get();
+
+    $impresso =  Impressoes::get('created_at');
+    $solicitac =  Solicitacao::get('created_at');
 
     $setores = setores::orderby('id')->get();
 
@@ -30,7 +33,6 @@ class historico extends Controller
     }else{
       $solicitacao = Solicitacao::with('setores')->paginate(10);
     }
-    
     
     //$solicitacao = setores::where('Nome', 'LIKE', '%' . $search . '%')->paginate(10);
     
@@ -47,7 +49,13 @@ class historico extends Controller
   //$setor = $solicitacao->paginate(10);
 
     //return view('historico', ['solicitacao' => $solicitacao], ['setores' => $setores], ['search' => $search]);
-    return view('historico', ['solicitacao' => $solicitacao], ['setores' => $setores] , ['impressoes' => $impressoes]);
+    return view('historico', [
+      'solicitacao' => $solicitacao,
+      'setores' => $setores ,
+      'impressoes' => $impressoes,
+      'created_at' => $solicitac,
+      'created_at' => $impresso
+    ]);
   }
   /*public function search(Request $request)
     {
