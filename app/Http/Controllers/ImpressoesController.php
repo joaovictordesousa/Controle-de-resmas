@@ -89,17 +89,9 @@ class ImpressoesController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
         $request->validate([
             'id_setores' => 'required|integer',
             'quant_impressoes' => 'required|integer'
-=======
-
-
-        $request->validate([
-            'id_setores_impressora' => 'required|integer',
-            'quant_impressoes' => 'required|integer',
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
         ]);
 
         Impressoes::create($request->all());
