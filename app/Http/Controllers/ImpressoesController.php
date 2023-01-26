@@ -22,15 +22,9 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
         // declarar as variaveis passando para a view
         $id_setores = Setores::get();
             return view('cadastro_impressao', ['id_setores' => $id_setores]);
-=======
-        return view('cadastro_impressao');
-
-
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
     }
 
     /**
@@ -53,33 +47,15 @@ class ImpressoesController extends Controller
         if($post){
             $impressoes = new Impressoes();
 
-<<<<<<< HEAD
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
-=======
-            $impressoes->setores_impressora = $post['id_setores_impressora'];
-            $impressoes->quant_impressoes = $post['quant_impressoes'];
-            $impressoes->save();
-
-
-
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
         // }
        // dd($request->all());
 
       // return view ('cadastro-impressao');
         }
     }
-<<<<<<< HEAD
-=======
-    public function cadastro_impressao(Request $request){
-
-        $impressoras = Impressora::orderby('id')->get();
-
-        return view ('cadastro_impressao', compact ('impress'));
-    }
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
 
     /**
      * Store a newly created resource in storage.
