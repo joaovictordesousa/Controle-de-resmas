@@ -11,8 +11,8 @@ class impressora extends Model
     protected $table = 'impressoras';
     protected $fillable = ['impressora'];
 
-    public function setores_impressora(){
+    public function setores(){
 
-        return $this->hasMany(Setores_impressora::class);
+        return $this->belongsToMany(Setores::class, 'setores_impressora','id_setor','id_impressora');
     }
 }

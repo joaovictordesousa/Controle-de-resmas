@@ -23,12 +23,13 @@
                         <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div> 
+                </div>
                  @endif
 
 
                 {{-- cadastro de impressao --}}
 
+<<<<<<< HEAD
                     <form  action="/criar-impressao" method="POST">
                     @csrf
                     <div class="form-group">
@@ -42,9 +43,24 @@
                             </option>
                             @endforeach
                             
+=======
+                <form action="{{ route('cadastro-de-impressao') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+
+                        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Impressora:</label>
+                        <select class="form-control" name="impressora" id="impressora">
+                            <option>Selecione a Impressora</option>
+
+                            @foreach ($impress as $impressora)
+                            <option value="{{ $impressora->id }}"> {{ $impressora->impressora }}
+                            </option>
+                            @endforeach
+                            <option value="1">1</option>
+>>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
                         </select>
                     </div>
-                    
+
                    {{-- cadastro de Impressões --}}
                                     <br>
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Quantidade de Impressões:</label>
@@ -69,4 +85,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection
