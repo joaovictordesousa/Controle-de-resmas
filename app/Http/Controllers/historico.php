@@ -70,9 +70,4 @@ class historico extends Controller
     return view('historico', $buscar);
     }*/
 
-
-  public function index(Request $request)
-  {
-  }
-
 }

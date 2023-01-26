@@ -18,7 +18,7 @@ class historico_impressaoController extends Controller
            
     $impressoes = Impressoes::orderby('id')->get();
 
-    // $solicitacao = Solicitacao::with('setores')->get();
+    $impressoes = Impressoes::with('setores')->get();
     $search = $request->input('id_setor');
 
     if(!empty($search)){
@@ -26,7 +26,7 @@ class historico_impressaoController extends Controller
     }else{
       $impressoes = Impressoes::with('setores')->paginate(10);
     }   
-    return view('historico', ['impressoes' => $impressoes]);
+    return view('historico-impressao', ['impressoes' => $impressoes]);
   }
 }
     

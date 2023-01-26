@@ -57,16 +57,13 @@
                 </a>
                 <ul class="nav justify-content-end">
                     {{-- nova view --}}
+
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/historico-impressoes">Impressão</a>
+                        <a class="nav-link text-dark" href="/historico-impressoes">Impressões</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/cadastro">Solicitação</a>
-                    </li>
-                   
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="/">Histórico</a>
+                        <a class="nav-link text-dark" href="/">Resmas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/relatorio">Relatório</a>

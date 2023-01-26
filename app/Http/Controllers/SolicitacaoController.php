@@ -28,7 +28,6 @@ class SolicitacaoController extends Controller
         $solicitacao = new Solicitacao();
         $solicitacao->id_setor = $request->input('id_setor');
         $solicitacao->quant_resmas = $request->input('quant_resmas');
-
         $solicitacao->save();
 
         //return view ('historico');
@@ -96,10 +95,10 @@ class SolicitacaoController extends Controller
      */
     public function destroy($id)
     {
-        $solicitacao = Solicitacao::findOrFail($id);
-        $solicitacao-> delete(); 
+        // $solicitacao = Solicitacao::findOrFail($id);
+        // $solicitacao-> delete(); 
 
-        return "Solicitação excluida";
+        // return "Solicitação excluida";
     }
 }
 

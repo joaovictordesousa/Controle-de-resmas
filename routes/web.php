@@ -55,12 +55,17 @@ Route::group(['middleware' => ['auth.session']], function() {
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
  
+  // criar rotas de impressao desde cadastro ao historico
   Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
  
-  Route::post('/criar-impressao', [ImpressoesController::class, 'store'])->name('criar-impressao' ,function () {
-    return view('historico');});
+  Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
+  //->name('criar-impressao' ,function () {
+  //  return view('historico-impressao');});
 
-  Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])->name('historico.impressao', function () {
+// 
+
+  Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])
+      ->name('histori', function () {
     return view('historico-impressao');});
 
 require __DIR__.'/auth.php';

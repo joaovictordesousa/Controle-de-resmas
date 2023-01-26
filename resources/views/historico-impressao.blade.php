@@ -36,7 +36,7 @@
         {{-- dd($solicitacao) --}}
         <div class="mh-100" style="width: 1200px; height: 1000px;">
             <div class="card border-dark" style="max-width: 700rem;">
-                <div class="card-header text-white" style="background-color: #044f84;">Histórico de solicitação de resmas
+                <div class="card-header text-white" style="background-color: #044f84;">Histórico de Impressões
                 </div>
                 <div class="card-body text-dark">
                     <p class="card-text">
@@ -67,21 +67,17 @@
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
                                 <th>Solicitação</th>
-                                <th>Nome</th>
-                                <th>Matrícula</th>
                                 <th>Setor</th>
                                 <th>Impressora</th>
-                                <th>Quantidade de resmas</th>
                                 <th>Impressões</th>
                                 <th>Data da solicitação</th>
                             </tr>
+
                         </thead>
                         <tbody>
                             @foreach ($impressoes as $impress) 
                             <tr>
                                 <td value="{{$impress->id }}">{{$impress->id}}</td>
-                                <td></td>
-                                <td></td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Nome}} - {{$impress->setores->Sigla}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
                                 <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>  
@@ -92,7 +88,7 @@
                     </table>
 
                     <div>
-                        {{$solicitacao->links()}}
+                        {{-- {{$solicitacao->links()}} --}}
 
                     </div>
                     </p>

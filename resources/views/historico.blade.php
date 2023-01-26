@@ -37,7 +37,7 @@
         {{-- dd($solicitacao) --}}
         <div class="mh-100" style="width: 1200px; height: 1000px;">
             <div class="card border-dark" style="max-width: 700rem;">
-                <div class="card-header text-white" style="background-color: #044f84;">Histórico de solicitação de resmas
+                <div class="card-header text-white" style="background-color: #044f84;">Histórico de Resmas
                 </div>
                 <div class="card-body text-dark">
                     <p class="card-text">
@@ -83,9 +83,7 @@
                                 <th>Nome</th>
                                 <th>Matrícula</th>
                                 <th>Setor</th>
-                                <th>Impressora</th>
                                 <th>Quantidade de resmas</th>
-                                <th>Impressões</th>
                                 <th>Data da solicitação</th>
 
                                 {{-- <th id="ediatr">...</th> --}}
@@ -102,9 +100,7 @@
                                     <td value="{{ $solic->id }}">{{ $solic->nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->matricula }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->setores->Nome }} - {{ $solic->setores->Sigla }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->setores->Impressora }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
-                                    <td></td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
 
                                     {{-- <td> <form action="{{route('historico')}}" method="DELETE">
@@ -114,20 +110,6 @@
                                 </tr>
 
                             @endforeach
-                            {{-- }@else{ --}}
-                            @foreach ($impressoes as $impress) 
-                            <tr>
-                                <td value="{{$impress->id }}">{{$impress->id}}</td>
-                                <td></td>
-                                <td></td>
-                                <td value="{{$impress->id }}">{{$impress->setores->Nome}} - {{$impress->setores->Sigla}}</td>
-                                <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
-                                <td></td>
-                                <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>  
-                                <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
-                            </tr>     
-                            @endforeach
-                        {{-- }@endif --}}
 
                             
                         </tbody>
