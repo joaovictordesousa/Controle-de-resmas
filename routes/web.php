@@ -14,6 +14,7 @@ use App\Http\Controllers\ImpressoesController;
 use App\Http\Controllers\Teste;
 use App\Http\Controllers\historico_impressaoController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

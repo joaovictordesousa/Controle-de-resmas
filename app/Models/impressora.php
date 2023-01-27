@@ -12,7 +12,7 @@ class impressora extends Model
     protected $fillable = ['impressora'];
 
     public function setores_impressora(){
-
+        
         return $this->hasMany(Setores_impressora::class);
     }
 }

@@ -88,8 +88,7 @@
                     </table>
 
                     <div>
-                        {{-- {{$solicitacao->links()}} --}}
-
+                        {{$impressoes->links()}}                    
                     </div>
                     </p>
                 </div>
