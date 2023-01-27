@@ -91,7 +91,7 @@
                             }
                         </style>
                         <tfoot id="tessste" >
-                            <td>Total</td>
+                            <td>Total de Resmas</td>
                             <td></td>
                             <td></td>
                             <td>{{$quant_impressoes}}<td>

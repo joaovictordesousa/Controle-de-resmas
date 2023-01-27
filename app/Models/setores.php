@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Solicitacao;
-<<<<<<< HEAD
 use App\Models\impressoes;
-=======
-use App\Models\Impressora;
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
 
 class setores extends Model
 {

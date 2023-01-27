@@ -10,11 +10,8 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SolicitacaoController;
 use App\Models\Solicitacao;
 use App\Http\Controllers\ImpressoesController;
-<<<<<<< HEAD
 use App\Http\Controllers\Teste;
 use App\Http\Controllers\historico_impressaoController;
-=======
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
 
 /*
 |--------------------------------------------------------------------------
@@ -56,28 +53,19 @@ Route::group(['middleware' => ['auth.session']], function() {
 
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
-<<<<<<< HEAD
- 
+
   // criar rotas de impressao desde cadastro ao historico
   Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
- 
+
   Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
   //->name('criar-impressao' ,function () {
   //  return view('historico-impressao');});
 
-// 
+//
 
   Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])
       ->name('histori', function () {
     return view('historico-impressao');});
-=======
-
-  Route::get('/criar-impressao', [ImpressoesController::class, 'index'] ,function () {
-    return view('cadastro');});
-
-  Route::post('/criar-impressao', [ImpressoesController::class, 'store'])
-  ->name('cadastro-de-impressao');
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
 
 require __DIR__.'/auth.php';
 
