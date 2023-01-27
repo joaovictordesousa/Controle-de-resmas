@@ -11,14 +11,14 @@
     <div class="container">
         <div class="mh-100" style="width: 1000px; height: 1000px;">
             <div class="card border-dark" style="max-width: 700rem;">
-                <div class="card-header text-white" style="background-color: #044f84;">RELATÓRIO RESMAS</div>
+                <div class="card-header text-white" style="background-color: #044f84;">RELATÓRIO IMPRESSÃO</div>
                 <div class="card-body text-dark">
-                    <a class="btn btn-outline-primary" href="/relatorio-impressao" role="button">RELATÓRIO DE IMPRESSÃO</a>
+                    <a class="btn btn-outline-primary" href="/relatorio" role="button">RELATÓRIO RESMAS</a>
         <br><br>
                     <p class="card-text">
 
                         <!-- Setor-->
-                    <form action="{{ route('gera-pdf') }}" method="GET">
+                    <form action="{{ route('gerar-pdf') }}" method="GET">
                         @csrf
                         <div class="form-group">
                             <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>

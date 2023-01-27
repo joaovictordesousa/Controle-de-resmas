@@ -15,7 +15,7 @@ use App\Exports\RelatorioExport;
 
 
 
-class relatorio extends Controller
+class relatorio_impressaoController extends Controller
 {
 
   public function relatorio(Request $request)
@@ -23,7 +23,7 @@ class relatorio extends Controller
     $setores = Setores::orderby('id')->get();
 
 
-    $solicitacao = Solicitacao::where('id_setor', '=', $request->id_setor)
+    $impressoes = Impressoes::where('id_setor', '=', $request->id_setor)
       ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']);
 
 
@@ -33,7 +33,7 @@ class relatorio extends Controller
 
 
 
-    return view('relatorio', compact('setores'));
+    return view('relatorio-impresao', compact('setores'));
   }
 
 
@@ -43,7 +43,7 @@ class relatorio extends Controller
 
     $option = $request->documentos;
 
-    $id_setor = $request->input('id_setor');
+    $id_setores = $request->input('id_setores');
     $datainicial = $request->input('datainicial');
     $datafinal = $request->input('datafinal');
 
@@ -51,39 +51,39 @@ class relatorio extends Controller
 
       //PDF
 
-      $solicitacao = Solicitacao::where('id_setor', $id_setor)
+      $impressoes = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
         ->get();
 
-      $total = Solicitacao::where('id_setor', $id_setor)
+      $total = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
-        ->sum('quant_resmas');
+        ->sum('quant_impressoes');
 
 
       $relatorio = [
         'title' => 'Relatório',
         'date' => date('d/m/Y'),
-        'solicitacao' => $solicitacao,
+        'impressoes' => $impressoes,
         'total' => $total,
       ];
 
       //$solicitacao = Solicitacao::where('id_setor', $request->id_setor)
       //->whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
 
-      $pdf = PDF::loadView('myPDF', $relatorio);
+      $pdf = PDF::loadView('myPDF2', $relatorio);
       return $pdf->stream('relatorio.pdf');
     }
     if ($option == 2) {
 
       //XLS
 
-      return Excel::download(new RelatorioExport($id_setor, $datainicial, $datafinal), 'relatorio.xlsx');
+      return Excel::download(new RelatorioExport($id_setores, $datainicial, $datafinal), 'relatorio.xlsx');
     }
     if ($option == 3) {
 
       //CVS
 
-      return Excel::download(new RelatorioExport($id_setor, $datainicial, $datafinal), 'relatorio.csv');
+      return Excel::download(new RelatorioExport($id_setores, $datainicial, $datafinal), 'relatorio.csv');
     }
   }
 }
