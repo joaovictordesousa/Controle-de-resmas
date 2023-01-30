@@ -22,10 +22,8 @@ class relatorio_impressaoController extends Controller
   {
     $setores = Setores::orderby('id')->get();
 
-
-    $impressoes = Impressoes::where('id_setor', '=', $request->id_setor)
+    $impressoes = Impressoes::where('id_setores', '=', $request->id_setores)
       ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']);
-
 
     /*if($request->datainicial && $request->datafinal){
          $solicitacao = Solicitacao::whereBetween('created_at', '=', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59'])->get();
@@ -53,8 +51,10 @@ class relatorio_impressaoController extends Controller
 
       $impressoes = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
-        ->get();
-
+        ;
+      // $impressoes = Impressoes::where('id_setor', '=', $request->id_setor)
+      // ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']);
+    
       $total = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
         ->sum('quant_impressoes');

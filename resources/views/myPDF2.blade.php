@@ -98,6 +98,7 @@
                 <th style="border-style:solid;">Data Solicitação</th>
             </tr>
         </thead>
+        {{dd($impressoes)}}
         <tbody>
             @foreach ($impressoes as $impress)
                 <tr>
