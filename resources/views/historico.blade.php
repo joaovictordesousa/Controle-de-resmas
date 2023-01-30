@@ -125,7 +125,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>{{ $quant_resmas}}</td> 
+                            <td>{{ $quant_resmas}}</td>
                             <td></td>
                         </tfoot>
                     </table>
