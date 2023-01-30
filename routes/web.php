@@ -12,6 +12,7 @@ use App\Models\Solicitacao;
 use App\Http\Controllers\ImpressoesController;
 use App\Http\Controllers\Teste;
 use App\Http\Controllers\historico_impressaoController;
+use App\Http\Controllers\relatorio_impressaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,14 @@ Route::group(['middleware' => ['auth.session']], function() {
   Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])
       ->name('histori', function () {
     return view('historico-impressao');});
+
+
+    // gerar Relatorio para impressão
+  Route::get('/relatorio-impressao', [relatorio_impressaoController::class, 'relatorio'])
+    ->name('relatorio.impressao'); 
+  
+  Route::get('/geracao-pdf', [relatorio_impressaoController::class, 'Docs'])
+    ->name('gerar-pdf');
 
 require __DIR__.'/auth.php';
 

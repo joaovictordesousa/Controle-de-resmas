@@ -10,6 +10,7 @@ use App\Models\Impressoes;
 
 
 
+
 class historico_impressaoController extends Controller
 {
 
@@ -27,7 +28,8 @@ class historico_impressaoController extends Controller
 
     if(!empty($search)){
       $impressoes = Impressoes::where('id_setor', '=',  $search)->paginate(10)->withQueryString();
-    }else{
+    }
+    else{
       $impressoes = Impressoes::with('setores')->paginate(10);
     }
     return view('historico-impressao',[    //colocar rota certa
@@ -36,6 +38,8 @@ class historico_impressaoController extends Controller
         'id' => $id
 
 ]);
+    
+
   }
 }
 
