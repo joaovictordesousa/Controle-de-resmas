@@ -4,23 +4,23 @@
 
     <br><br>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
-  
+
     <script type="text/javascript">
         var $rows = $('#table tr');
         $('#search').keyup(function() {
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-        
+
             $rows.show().filter(function() {
                 var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
                 return !~text.indexOf(val);
             }).hide();
         });
         </script>
-    
+
     <div class="container">
 
         <a class="btn btn-outline-primary" href="/cadastro" role="button">NOVA SOLICITAÇÃO</a>
-        
+
                         {{-- NOVA view --}}
 
         <a class="btn btn-outline-primary" href="/criar-impressao" role="button">NOVA IMPRESSÃO</a>
@@ -44,7 +44,7 @@
                         <select class="form-control" name="" id="l">
                             <option>Selecione um setor</option>
 
-                           
+
                         </select>
 
                         <button class="btn btn-outline-success justify-content-md-end" type="submit"><svg
@@ -60,12 +60,13 @@
                     </div>
 
                     </form>
-                                       
+
                     <br>
                     <br>
                     <table class="table table-hover" id="table">
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
+                                <th></th>
                                 <th>Solicitação</th>
                                 <th>Setor</th>
                                 <th>Impressora</th>
@@ -75,20 +76,36 @@
 
                         </thead>
                         <tbody>
-                            @foreach ($impressoes as $impress) 
+                            @foreach ($impressoes as $impress)
                             <tr>
+                                <td></td>
                                 <td value="{{$impress->id }}">{{$impress->id}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Nome}} - {{$impress->setores->Sigla}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
-                                <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>  
+                                <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
                                 <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
-                            </tr>     
-                            @endforeach   
+                            </tr>
+                            @endforeach
                         </tbody>
+                        <style>
+                            #tessste{
+                                background-color: #C2E7DA;
+                                border: 1px solid dodgerblue;
+                            }
+                        </style>
+                        <tfoot id="tessste">
+                            <td><strong>Total de Impressões:</strong></td>
+                            <!-- <td>{{$id}}</td> -->
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{$quant_impressoes}}</td>
+                            <td></td>
+                        </tfoot>
                     </table>
 
                     <div>
-                        {{$impressoes->links()}}                    
+                         {{$impressoes->links()}}
                     </div>
                     </p>
                 </div>

@@ -9,7 +9,6 @@ use App\Http\Controllers\relatorio;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SolicitacaoController;
 use App\Models\Solicitacao;
-use App\Http\Controllers\TesteController;
 use App\Http\Controllers\ImpressoesController;
 use App\Http\Controllers\Teste;
 use App\Http\Controllers\historico_impressaoController;
@@ -55,15 +54,15 @@ Route::group(['middleware' => ['auth.session']], function() {
 
   //Route::any('/', [historico::class, 'search'])
   //->name('historico');
- 
+
   // criar rotas de impressao desde cadastro ao historico
   Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
- 
+
   Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
   //->name('criar-impressao' ,function () {
   //  return view('historico-impressao');});
 
-// 
+//
 
   Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])
       ->name('histori', function () {

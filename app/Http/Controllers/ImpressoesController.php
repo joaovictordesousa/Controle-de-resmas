@@ -17,8 +17,7 @@ class ImpressoesController extends Controller
     {
         // declarar as variaveis passando para a view
         $id_setores = Setores::get();
-            return view('cadastro_impressao', ['id_setores' => $id_setores]);    
-        
+            return view('cadastro_impressao', ['id_setores' => $id_setores]);
     }
 
     /**
@@ -26,23 +25,31 @@ class ImpressoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function impressorateste(){
+    //     $impressora = Impressora::find(1);
+
+    // foreach ($impressora->setores as $setores) {
+    //     echo $setores->pivot->created_at;
+    // }
+    // dd( $impressora);
+    // }
     public function create(Request $request)
     {
-        
+
         $post = $request->all();
         if($post){
             $impressoes = new Impressoes();
-             
+
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
-            $impressoes->save();             
+            $impressoes->save();
         // }
        // dd($request->all());
-       
+
       // return view ('cadastro-impressao');
         }
     }
- 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -50,7 +57,7 @@ class ImpressoesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
+    {
         $request->validate([
             'id_setores' => 'required|integer',
             'quant_impressoes' => 'required|integer'
@@ -69,7 +76,7 @@ class ImpressoesController extends Controller
      */
     public function show(Impressoes $impressoes)
     {
-        
+
     }
 
     /**

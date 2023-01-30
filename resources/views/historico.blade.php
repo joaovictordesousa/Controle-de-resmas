@@ -4,24 +4,24 @@
 
     <br><br>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
-  
+
     <script type="text/javascript">
         var $rows = $('#table tr');
         $('#search').keyup(function() {
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-        
+
             $rows.show().filter(function() {
                 var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
                 return !~text.indexOf(val);
             }).hide();
         });
         </script>
-    
+
     <div class="container">
 
         <a class="btn btn-outline-primary" href="/cadastro" role="button">NOVA SOLICITAÇÃO</a>
-        
-    
+
+
         {{-- View Cibely --}}
 
         <a class="btn btn-outline-primary" href="/criar-impressao" role="button">NOVA IMPRESSÃO</a>
@@ -72,13 +72,14 @@
                     </div>
 
                     </form>
-                    
-                    
+
+
                     <br>
                     <br>
                     <table class="table table-hover" id="table">
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
+                                <th></th>
                                 <th>Solicitação</th>
                                 <th>Nome</th>
                                 <th>Matrícula</th>
@@ -87,15 +88,16 @@
                                 <th>Data da solicitação</th>
 
                                 {{-- <th id="ediatr">...</th> --}}
-                                
+
                             </tr>
                         </thead>
                         <tbody>
 
                             {{-- @if ($impresso < $solicitac ){ --}}
 
-                            @foreach ($solicitacao as $solic) 
+                            @foreach ($solicitacao as $solic)
                                 <tr>
+                                    <td></td>
                                     <td value="{{ $solic->id }}">{{ $solic->id }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->matricula }}</td>
@@ -110,9 +112,22 @@
                                 </tr>
 
                             @endforeach
-
-                            
                         </tbody>
+                        <style>
+                            #tessste{
+                                background-color: #C2E7DA;
+                                border: 1px solid dodgerblue;
+                            }
+                        </style>
+                        <tfoot id="tessste">
+                            <td>Total de Resmas</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ $quant_resmas}}</td>
+                            <td></td>
+                        </tfoot>
                     </table>
 
                     <div>

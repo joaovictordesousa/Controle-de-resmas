@@ -23,7 +23,7 @@
                         <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div> 
+                </div>
                  @endif
 
 
@@ -32,7 +32,7 @@
                     <form  action="/criar-impressao" method="POST">
                     @csrf
                     <div class="form-group">
-                        
+
                         <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Impressoras e Quantidades:</label>
                         <select class="form-control" name="id_setores" id="id_setores">
                             <option>Selecione a Impressora e o Setor</option>
@@ -41,10 +41,10 @@
                             <option value="{{ $setor->id }}">{{ $setor->Sigla }} &nbsp  {{ $setor->Nome }} &nbsp  -  &nbsp {{$setor->Impressora}}
                             </option>
                             @endforeach
-                            
+
                         </select>
                     </div>
-                    
+
                    {{-- cadastro de Impressões --}}
                                     <br>
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Quantidade de Impressões:</label>
@@ -69,4 +69,4 @@
         </div>
     </div>
 </div>
-@endsection 
+@endsection
