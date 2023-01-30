@@ -18,14 +18,8 @@ class setores extends Model
 
         return $this->hasMany(Solicitacao::class);
     }
-<<<<<<< HEAD
     public function impressoes(){
 
         return $this->hasMany(Impressoes::class,'');
-=======
-    public function impressora(){
-
-        return $this->belongsToMany(impressora::class, 'setores_impressora');
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
     }
 }

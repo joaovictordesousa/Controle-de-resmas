@@ -4,14 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Impressoes;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use App\Models\Setores;
-=======
-use App\Models\Setores_impressora;
-use App\Models\Impressora;
-use App\Models\Setores;
-
->>>>>>> 92904128c4fb145368fa583b39d0c77e74da842b
 
 class ImpressoesController extends Controller
 {

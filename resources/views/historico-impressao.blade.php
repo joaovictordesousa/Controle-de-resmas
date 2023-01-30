@@ -66,6 +66,7 @@
                     <table class="table table-hover" id="table">
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
+                                <th></th>
                                 <th>Solicitação</th>
                                 <th>Setor</th>
                                 <th>Impressora</th>
@@ -77,6 +78,7 @@
                         <tbody>
                             @foreach ($impressoes as $impress)
                             <tr>
+                                <td></td>
                                 <td value="{{$impress->id }}">{{$impress->id}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Nome}} - {{$impress->setores->Sigla}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
@@ -88,20 +90,22 @@
                         <style>
                             #tessste{
                                 background-color: #C2E7DA;
+                                border: 1px solid dodgerblue;
                             }
                         </style>
-                        <tfoot id="tessste" >
-                            <td>Total de Resmas</td>
+                        <tfoot id="tessste">
+                            <td><strong>Total de Impressões:</strong></td>
+                            <!-- <td>{{$id}}</td> -->
                             <td></td>
                             <td></td>
-                            <td>{{$quant_impressoes}}<td>
+                            <td></td>
+                            <td>{{$quant_impressoes}}</td>
                             <td></td>
                         </tfoot>
                     </table>
 
                     <div>
-                        {{-- {{$solicitacao->links()}} --}}
-
+                         {{$impressoes->links()}}
                     </div>
                     </p>
                 </div>

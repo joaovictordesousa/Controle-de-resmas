@@ -23,7 +23,7 @@ class SolicitacaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $solicitacao = new Solicitacao();
         $solicitacao->id_setor = $request->input('id_setor');
@@ -84,7 +84,7 @@ class SolicitacaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
     }
 
     /**
@@ -96,7 +96,7 @@ class SolicitacaoController extends Controller
     public function destroy($id)
     {
         // $solicitacao = Solicitacao::findOrFail($id);
-        // $solicitacao-> delete(); 
+        // $solicitacao-> delete();
 
         // return "Solicitação excluida";
     }

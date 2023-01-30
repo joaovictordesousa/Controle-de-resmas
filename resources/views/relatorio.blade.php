@@ -21,8 +21,20 @@
                     <form action="{{ route('gera-pdf') }}" method="GET">
                         @csrf
                         <div class="form-group">
-                            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
+
+                        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">impressao ou resma</label>
+
                             <select class="form-control" name="id_setor" id="id_setor">
+
+                                <option>Selecione um</option>
+                                    <option value="resmas">resmas</option>
+                                    <option value="impressao">impressao</option>
+
+                            </select>
+                            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
+
+                            <select class="form-control" name="id_setor" id="id_setor">
+
                                 <option>Selecione um setor</option>
 
                                 @foreach ($setores as $setor)
@@ -64,7 +76,7 @@
                             </div>
 
                         </div>
-                        <br> 
+                        <br>
                         <!--Documentos-->
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Documento:</label>
                         <div class="form-group">

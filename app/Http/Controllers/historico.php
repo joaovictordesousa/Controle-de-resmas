@@ -14,8 +14,8 @@ class historico extends Controller
 {
 
   public function show(Request $request, Solicitacao $solicitacao)
-  {                                                                                                                                                                                                                                                                                                                    
-    
+  {
+
     $impressoes = Impressoes::orderby('id')->get();
 
     $impresso =  Impressoes::get('created_at');
@@ -26,6 +26,11 @@ class historico extends Controller
     $solicitacao = Solicitacao::with('setores')->get();
     $search = $request->input('id_setor');
 
+        //total
+
+    $quant_resmas = Solicitacao::sum('quant_resmas');
+    $id = Solicitacao::count('id');
+
     //$search = $request->get('search');
     //$solicitacao = Solicitacao::with('setores')->where('id_setor', 'LIKE', '%' . $search . '%')->paginate(10);
     if(!empty($search)){
@@ -33,18 +38,18 @@ class historico extends Controller
     }else{
       $solicitacao = Solicitacao::with('setores')->paginate(10);
     }
-    
+
     //$solicitacao = setores::where('Nome', 'LIKE', '%' . $search . '%')->paginate(10);
-    
+
     //$solicitacao = Solicitacao::paginate(10);
-    
+
      //if ($request->ajax()) {
       //$buscar = $solicitacao->where(function($query){
-        //  $query->where('id_setor', $request->id_setor); 
+        //  $query->where('id_setor', $request->id_setor);
      // });
 
      // return view('historico', compact('solicitacao'));
-  
+
 
   //$setor = $solicitacao->paginate(10);
 
@@ -54,14 +59,17 @@ class historico extends Controller
       'setores' => $setores ,
       'impressoes' => $impressoes,
       'created_at' => $solicitac,
-      'created_at' => $impresso
+      'created_at' => $impresso,
+      'quant_resmas' => $quant_resmas,
+      'id' => $id,
+
     ]);
   }
   /*public function search(Request $request)
     {
       $id_setor = $request->input('id_setor');
       $solicitacao = Solicitacao::where('id_setor', '=', $request->id_setor)->get();
-      
+
 
 
     $buscar = [
