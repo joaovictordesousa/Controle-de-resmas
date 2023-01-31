@@ -113,12 +113,14 @@
 
                             @endforeach
                         </tbody>
+                        
                         <style>
                             #tessste{
-                                background-color: #C2E7DA;
+                                background-color: #E1F5FE;
                                 border: 1px solid dodgerblue;
                             }
                         </style>
+
                         <tfoot id="tessste">
                             <td>Total de Resmas</td>
                             <td></td>
