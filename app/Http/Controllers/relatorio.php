@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Setores;
 use App\Models\Solicitacao;
 use App\Models\RelatorioModel;
-use App\Models\Impressoes;
 use PDF;
 use Maatwebsite\Excel\Facades\CSV;
 use Maatwebsite\Excel\Facades\Excel;
@@ -93,8 +92,8 @@ class relatorio extends Controller
 
           //$solicitacao = solicitacao::find($id_setor);
           //$data = RelatorioModel::whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
-            
-         
+
+
         //}
 
      // function data(Request $request){

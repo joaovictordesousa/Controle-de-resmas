@@ -21,20 +21,20 @@ class PDFController extends Controller
     public function generatePDF()
     {
         //$solicitacao = Solicitacao::get();
-      
+
         //$solicitacao = Solicitacao::with('setores')->find('')->get();
 
         //$solicitacao = setores::find('id')->solicitacao;
 
-       
+
         $relatorio = [
             'title' => 'Relatório de',
             'date' => date('d/m/Y'),
-            
-        ]; 
-            
+
+        ];
+
         $pdf = PDF::loadView('myPDF', $relatorio);
-     
+
         return $pdf->stream('relatorio.pdf');
     }
 }
