@@ -35,7 +35,7 @@
 
                         <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Impressoras e Quantidades:</label>
                         <select class="form-control" name="id_setores" id="id_setores">
-                            <option>Selecione a Impressora e o Setor</option>
+                            <option>Selecione o Setor e a Impressora</option>
 
                             @foreach ($id_setores as $setor)
                             <option value="{{ $setor->id }}">{{ $setor->Sigla }} &nbsp  {{ $setor->Nome }} &nbsp  -  &nbsp {{$setor->Impressora}}
@@ -46,7 +46,7 @@
                     </div>
 
                    {{-- cadastro de Impressões --}}
-                                    <br>
+                            <br>
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Quantidade de Impressões:</label>
                             <br>
                             <input type="number" class="form-group" name="quant_impressoes" id="quant_impressoes" placeholder="Digite a quantidade" style="border-radius: 5px;">
