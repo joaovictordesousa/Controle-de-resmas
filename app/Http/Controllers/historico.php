@@ -16,9 +16,6 @@ class historico extends Controller
   public function show(Request $request, Solicitacao $solicitacao)
   {
 
-    $impressoes = Impressoes::orderby('id')->get();
-
-    $impresso =  Impressoes::get('created_at');
     $solicitac =  Solicitacao::get('created_at');
 
     $setores = setores::orderby('id')->get();
@@ -57,9 +54,7 @@ class historico extends Controller
     return view('historico', [
       'solicitacao' => $solicitacao,
       'setores' => $setores ,
-      'impressoes' => $impressoes,
       'created_at' => $solicitac,
-      'created_at' => $impresso,
       'quant_resmas' => $quant_resmas,
       'id' => $id,
 

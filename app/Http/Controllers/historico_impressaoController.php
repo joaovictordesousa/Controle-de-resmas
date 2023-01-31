@@ -19,6 +19,8 @@ class historico_impressaoController extends Controller
 
     $impressoes = Impressoes::orderby('id')->get();
 
+    $setores = setores::orderby('id')->get();
+
     $impressoes = Impressoes::with('setores')->get();
     $search = $request->input('id_setor');
 
@@ -35,10 +37,11 @@ class historico_impressaoController extends Controller
     return view('historico-impressao',[    //colocar rota certa
         'impressoes' => $impressoes,
         'quant_impressoes' => $quant_impressoes,
+        'setores' => $setores,
         'id' => $id
 
 ]);
-    
+
 
   }
 }

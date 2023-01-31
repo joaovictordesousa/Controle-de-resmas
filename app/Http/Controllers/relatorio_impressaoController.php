@@ -51,10 +51,10 @@ class relatorio_impressaoController extends Controller
 
       $impressoes = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
-        ;
+        ->get();
       // $impressoes = Impressoes::where('id_setor', '=', $request->id_setor)
       // ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']);
-    
+
       $total = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
         ->sum('quant_impressoes');
@@ -65,6 +65,7 @@ class relatorio_impressaoController extends Controller
         'date' => date('d/m/Y'),
         'impressoes' => $impressoes,
         'total' => $total,
+        'id_setores' => $id_setores,
       ];
 
       //$solicitacao = Solicitacao::where('id_setor', $request->id_setor)
@@ -93,8 +94,8 @@ class relatorio_impressaoController extends Controller
 
           //$solicitacao = solicitacao::find($id_setor);
           //$data = RelatorioModel::whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
-            
-         
+
+
         //}
 
      // function data(Request $request){
