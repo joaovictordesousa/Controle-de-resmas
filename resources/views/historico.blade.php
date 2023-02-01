@@ -84,7 +84,7 @@
                     <table class="table table-hover" id="table">
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
-                                <th></th>
+
                                 <th>Solicitação</th>
                                 <th>Nome</th>
                                 <th>Matrícula</th>
@@ -100,7 +100,7 @@
 
                             @foreach ($solicitacao as $solic)
                                 <tr>
-                                    <td></td>
+
                                     <td value="{{ $solic->id }}">{{ $solic->id }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->matricula }}</td>
@@ -124,7 +124,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
+                            
                             <td>{{ $quant_resmas}}</td>
                             <td></td>
                         </tfoot>

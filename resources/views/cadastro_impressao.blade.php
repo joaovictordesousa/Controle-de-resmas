@@ -12,7 +12,7 @@
 <div class="container">
     <div class="mh-100" style="width: 1000px; height: 1000px;">
         <div class="card border-dark" style="max-width: 700rem;">
-            <div class="card-header text-white" style="background-color: #044f84;">Cadastro de Impressão</div>
+            <div class="card-header text-white" style="background-color: #044f84;">Gestão de Impressão</div>
             <div class="card-body text-dark">
                 <p class="card-text">
 
@@ -33,7 +33,7 @@
                     @csrf
                     <div class="form-group">
 
-                        <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Impressoras e Quantidades:</label>
+                        <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Setor e Impressoras:</label>
                         <select class="form-control" name="id_setores" id="id_setores">
                             <option>Selecione o Setor e a Impressora</option>
 
