@@ -65,7 +65,7 @@ Route::group(['middleware' => ['auth.session']], function() {
 //
 
   Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])
-      ->name('histori', function () {
+      ->name('historico', function () {
     return view('historico-impressao');});
 
 
