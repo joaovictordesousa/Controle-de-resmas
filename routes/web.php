@@ -65,14 +65,14 @@ Route::group(['middleware' => ['auth.session']], function() {
 //
 
   Route::get('/historico-impressoes', [historico_impressaoController::class,'show'])
-      ->name('histori', function () {
+      ->name('historico2', function () {
     return view('historico-impressao');});
 
 
     // gerar Relatorio para impressão
   Route::get('/relatorio-impressao', [relatorio_impressaoController::class, 'relatorio'])
-    ->name('relatorio.impressao'); 
-  
+    ->name('relatorio.impressao');
+
   Route::get('/geracao-pdf', [relatorio_impressaoController::class, 'Docs'])
     ->name('gerar-pdf');
 

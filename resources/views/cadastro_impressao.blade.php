@@ -57,7 +57,7 @@
                     <br><br>
                     <div class="container">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <a class="btn btn-outline-danger me-md-2" href="{{ route('historico') }}" role="button"
+                            <a class="btn btn-outline-danger me-md-2" href="{{ route('historico2') }}" role="button"
                                 style="margin: 0 15px;">Cancelar</a>
                             <button type="submit" class="btn btn-outline-primary">Salvar</button>
 

@@ -34,21 +34,26 @@
                 </p>
             </div>
         @endif
-        {{-- dd($solicitacao) --}}
         <div class="mh-100" style="width: 1200px; height: 1000px;">
             <div class="card border-dark" style="max-width: 700rem;">
                 <div class="card-header text-white" style="background-color: #044f84;">Histórico de Resmas
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <ul class="nav nav-pills card-header-pills">
+
+                            <li class="nav-item ">
+                                <a type="button" class="nav-link active " style="margin:-32px 8px;background-color: #05395e;"
+                                href="{{route('historico2')}}">Histórico de Impressões</a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
+            </div>
+
                 <div class="card-body text-dark">
                     <p class="card-text">
 
-                        {{--<form action="{{route('historico')}}" method="GET">
-                            <input type="text" class="form-control" name="id_setor" id="id_setor"
-                                placeholder="Digite aqui...">
 
-                                <button class="btn btn-outline-success justify-content-md-end" type="submit">buscar
-                            </button>
-                        </form>--}}
                         <form class="d-flex" action="{{route('historico')}}" method="GET">
                         <select class="form-control" name="id_setor" id="id_setor">
                             <option>Selecione um setor</option>
@@ -93,27 +98,20 @@
                         </thead>
                         <tbody>
 
-                            {{-- @if ($impresso < $solicitac ){ --}}
-
                             @foreach ($solicitacao as $solic)
                                 <tr>
                                     <td></td>
                                     <td value="{{ $solic->id }}">{{ $solic->id }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->matricula }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->setores->Nome }} - {{ $solic->setores->Sigla }}</td>
+                                    <td value="{{ $solic->id }}">{{ $solic->setores->Sigla }} - {{ $solic->setores->Nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
-
-                                    {{-- <td> <form action="{{route('historico')}}" method="DELETE">
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger">Deletar</button>
-                                    </form></td> --}}
                                 </tr>
 
                             @endforeach
                         </tbody>
-                        
+
                         <style>
                             #tessste{
                                 background-color: #E1F5FE;
