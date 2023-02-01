@@ -22,7 +22,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
-                            <select class="form-control" name="id_setor" id="id_setor">
+                            <select class="form-control" name="id_setores" id="id_setores">
                                 <option>Selecione um setor</option>
 
                                 @foreach ($setores as $setor)
@@ -64,7 +64,7 @@
                             </div>
 
                         </div>
-                        <br> 
+                        <br>
                         <!--Documentos-->
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Documento:</label>
                         <div class="form-group">

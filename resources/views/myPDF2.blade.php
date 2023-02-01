@@ -92,26 +92,23 @@
     <table class="exe4">
         <thead style="background-color: 	#E1F5FE;">
             <tr class="cab">
-                <th style="border-style:solid;">Nome</th>
                 <th style="border-style:solid;">Setor</th>
+                <th style="border-style:solid;">Impressora</th>
                 <th style="border-style:solid;">Quantidade de Impressão</th>
                 <th style="border-style:solid;">Data Solicitação</th>
             </tr>
         </thead>
-        {{dd($impressoes)}}
+
         <tbody>
             @foreach ($impressoes as $impress)
                 <tr>
-                    <th>{{ $impress->setores->Nome }} - {{ $solic->setores->Sigla }}</th>
+                    <th>{{ $impress->setores->Nome }} - {{ $impress->setores->Sigla }}</th>
                     <th>{{ $impress->setores->Impressora }}</th>
                     <th>{{ $impress->quant_impressoes }}</th>
                     <th>{{ $impress->created_at->format('d/m/Y') }}</th>
                 </tr>
             @endforeach
-
         </tbody>
-
-
     </table>
     <br>
     <h3>Total de Impressões: {{ $total }}</h3>
