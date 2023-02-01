@@ -23,7 +23,7 @@
 
                         {{-- NOVA view --}}
 
-        <a class="btn btn-outline-primary" href="/criar-impressao" role="button">NOVA IMPRESSÃO</a>
+        <a class="btn btn-outline-primary" href="/criar-impressao" role="button">GESTÃO DE IMPRESSÕES</a>
         <br><br>
 
         @if (session('msg'))
@@ -83,7 +83,7 @@
                             <tr>
                                 <td></td>
                                 <td value="{{$impress->id }}">{{$impress->id}}</td>
-                                <td value="{{$impress->id }}">{{$impress->setores->Nome}} - {{$impress->setores->Sigla}} - {{$impress->setores->Impressora}}</td>
+                                <td value="{{$impress->id }}">{{$impress->setores->Sigla}} - {{$impress->setores->Nome}} - {{$impress->setores->Impressora}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
                                 <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
                                 <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>

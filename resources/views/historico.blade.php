@@ -24,7 +24,7 @@
 
         {{-- View Cibely --}}
 
-        <a class="btn btn-outline-primary" href="/criar-impressao" role="button">NOVA IMPRESSÃO</a>
+        <a class="btn btn-outline-primary" href="/criar-impressao" role="button">GESTÃO DE IMPRESSÕES</a>
         <br><br>
 
         @if (session('msg'))
