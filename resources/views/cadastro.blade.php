@@ -29,10 +29,10 @@
 
                 {{-- Cadastrar setores --}}
 
-                 <form action="{{ route('criar-solicitacao') }}" method="POST"> 
+                 <form action="{{ route('criar-solicitacao') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        
+
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
                         <select class="form-control" name="id_setor" id="id_setor">
                             <option>Selecione um setor</option>
@@ -43,17 +43,17 @@
                             @endforeach
                         </select>
                     </div>
-                   
+
 
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Nome:</label>
                             <input type="text" class="form-control" name="nome" id="exampleFormControlInput1"
                                 placeholder="Digite aqui...">
 
-                        
+
                     <br>
-                        
+
                         <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Matrícula:</label>
-                            <input type="text" class="form-control" name="matricula" id="exampleFormControlInput1"
+                            <input type="number" class="form-control" name="matricula" id="exampleFormControlInput1"
                                 placeholder="Digite aqui...">
 
                     <br>
@@ -94,7 +94,7 @@
                                     <option value="19">19</option>
                                     <option value="20">20</option>
 
-                                    
+
 
 
                                 </select>

@@ -65,7 +65,7 @@ class ImpressoesController extends Controller
 
         Impressoes::create($request->all());
 
-        return redirect()->route('historico')->with('msg','Salvo com sucesso!');
+        return redirect()->route('historico2')->with('msg','Salvo com sucesso!');
     }
 
     /**

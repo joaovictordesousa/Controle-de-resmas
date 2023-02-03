@@ -22,19 +22,17 @@ class historico_impressaoController extends Controller
     $setores = setores::orderby('id')->get();
 
     $impressoes = Impressoes::with('setores')->get();
-    $search = $request->input('id_setor');
-
-    $setores = setores::orderby('id')->get();
+    $search = $request->input('id_setores');
 
     // soma das impressões
     $quant_impressoes = Impressoes::sum('quant_impressoes');
     $id = Impressoes::count('id');
 
     if(!empty($search)){
-      $impressoes = Impressoes::where('id_setor', '=',  $search)->paginate(10)->withQueryString();
+      $impressoes = impressoes::where('id_setores', '=', $search)->paginate(10)->withQueryString();
     }
     else{
-      $impressoes = Impressoes::with('setores')->paginate(10);
+      $impressoes = impressoes::with('setores')->paginate(10);
     }
     return view('historico-impressao',[    //colocar rota certa
         'impressoes' => $impressoes,

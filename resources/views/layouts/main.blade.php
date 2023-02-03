@@ -27,7 +27,7 @@
     <!-- datepicker -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-        
+
 
 
         <link rel="stylesheet"
@@ -40,7 +40,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <!-- Datatable JS -->
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>  
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
 
 
@@ -53,17 +53,14 @@
                 <img src="/img/Logo_transparente.png" style="width: 150px; height: 60px"
                     class="d-inline-block align-text-top">
                 <a class="navbar-brand text-dark">
-                    Controle de resmas e impressões
+                    Controle de Resmas e Impressões
                 </a>
                 <ul class="nav justify-content-end">
                     {{-- nova view --}}
 
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="/historico-impressoes">Impressões</a>
-                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/">Resmas</a>
+                        <a class="nav-link text-dark" href="/">Histórico</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/relatorio">Relatório</a>
