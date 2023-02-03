@@ -31,6 +31,13 @@ class historico_impressaoController extends Controller
     if(!empty($search)){
       $impressoes = impressoes::where('id_setores', '=', $search)->paginate(10)->withQueryString();
     }
+
+    //  joao
+    elseif (!empty($total)){
+      $total = impressoes::where('id_setores', '=', $search);
+    }
+    // joao
+
     else{
       $impressoes = impressoes::with('setores')->paginate(10);
     }
