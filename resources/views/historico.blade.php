@@ -118,7 +118,7 @@
                                 border: 1px solid dodgerblue;
                             }
                         </style>
-
+                    @if (!empty($quant_resmas))
                         <tfoot id="tessste">
                             <td>Total de Resmas</td>
                             <td></td>
@@ -127,6 +127,7 @@
                             <td>{{ $quant_resmas}}</td>
                             <td></td>
                         </tfoot>
+                    @endif
                     </table>
 
                     <div>

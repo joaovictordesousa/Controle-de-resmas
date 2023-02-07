@@ -58,11 +58,12 @@
                         <select class="form-control" name="id_setores" id="id_setores">
                             <option>Selecione um setor</option>
 
-                            @foreach ($setores as $setor)
+                            @foreach ($setores as $setor )
                             <option value="{{ $setor->id }}">{{ $setor->Sigla }} &nbsp   {{ $setor->Nome }} &nbsp  -  &nbsp {{$setor->Impressora}}
                             </option>
                             @endforeach
                         </select>
+
 
                         <button class="btn btn-outline-success justify-content-md-end" type="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -110,7 +111,7 @@
                                 border: 1px solid dodgerblue;
                             }
                         </style>
-                        @empty($search)
+                        @if (!empty($quant_impressoes))
                         <tfoot id="tessste">
                             <td><strong>Total de Impressões:</strong></td>
                             <td></td>
@@ -118,7 +119,8 @@
                             <td>{{$quant_impressoes}}</td>
                             <td></td>
                         </tfoot>
-                    @endempty
+                    @endif
+
                     </table>
 
                     <div>
@@ -129,7 +131,5 @@
                     </div>
                     </p>
                 </div>
-
-
             @endsection
 

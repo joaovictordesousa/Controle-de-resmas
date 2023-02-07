@@ -12,36 +12,36 @@ use PhpParser\Node\Expr\Isset_;
 class historico_impressaoController extends Controller
 {
 
-  public function show(Request $request, Solicitacao $solicitacao)
+  public function show(Request $request)
     {
-
-    $impressoes = Impressoes::orderby('id')->get();
-
+    //definindo variaveis
+    $impressoes = Impressoes::orderByDesc('id')->get();
     $setores = setores::orderby('id')->get();
-    $id_setores = setores::orderby('id')->get();
 
     $impressoes = Impressoes::with('setores')->get();
+    //inputs
     $search = $request->input('id_setores');
-    $id_setores = $request->input('id_setor');
 
-    // soma das impressões
+    //Somar
     $quant_impressoes = Impressoes::sum('quant_impressoes');
-    $id = Impressoes::orderby('search');
 
 
 
     if(!empty($search)){
       $impressoes = impressoes::where('id_setores', '=', $search)->paginate(10)->withQueryString();
+        unset($quant_impressoes);
+        $quant_impressoes = 0;
     }
     else{
       $impressoes = impressoes::with('setores')->paginate(10);
+
+
     }
     return view('historico-impressao',[
         'impressoes' => $impressoes,
         'quant_impressoes' => $quant_impressoes,
-        'id' => $id,
         'setores' => $setores ,
-        '' => $search
+
     ]);
   }
 }
