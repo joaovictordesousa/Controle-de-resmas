@@ -110,18 +110,22 @@
                                 border: 1px solid dodgerblue;
                             }
                         </style>
+                        @empty($search)
                         <tfoot id="tessste">
                             <td><strong>Total de Impressões:</strong></td>
                             <td></td>
                             <td></td>
-
                             <td>{{$quant_impressoes}}</td>
                             <td></td>
                         </tfoot>
+                    @endempty
                     </table>
 
                     <div>
-                         {{$impressoes->links()}}
+                        {{-- paginate passando os parametros que estão pesquisando' --}}
+                         {{$impressoes->appends([
+                            'search' => request()->get('search','')
+                         ])->links()}}
                     </div>
                     </p>
                 </div>
