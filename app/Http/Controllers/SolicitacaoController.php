@@ -44,9 +44,12 @@ class SolicitacaoController extends Controller
         $request->validate([
             'id_setor' => 'required|integer',
             'nome' => 'required',
-            'matricula' => 'required',
+            'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
         ]);
+        $messages = [
+            'quant_resmas' => 'Quantidade de Resmas precisa ser inteiro'        
+        ];
 
         Solicitacao::create($request->all());
 
