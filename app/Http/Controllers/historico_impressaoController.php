@@ -32,6 +32,13 @@ class historico_impressaoController extends Controller
         unset($quant_impressoes);
         $quant_impressoes = 0;
     }
+
+    //  joao
+    elseif (!empty($total)){
+      $total = impressoes::where('id_setores', '=', $search);
+    }
+    // joao
+
     else{
       $impressoes = impressoes::with('setores')->paginate(10);
 
