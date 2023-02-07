@@ -29,10 +29,9 @@ class relatorio_impressaoController extends Controller
          $solicitacao = Solicitacao::whereBetween('created_at', '=', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59'])->get();
         }*/
 
-
-
-    return view('relatorio-impresao', compact('setores'));
+    return view('relatorio-impresao' , compact('setores'));
   }
+
 
 
 
@@ -57,7 +56,7 @@ class relatorio_impressaoController extends Controller
 
       $total = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
-        ->sum('quant_impressoes');
+        ->sum('quant_impressoes',);
 
 
       $relatorio = [
