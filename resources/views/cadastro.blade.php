@@ -16,6 +16,8 @@
             <div class="card-body text-dark">
                 <p class="card-text">
 
+                    <a class="btn btn-outline-primary" href="/criar-impressao" role="button">GESTÃO DE IMPRESSÕES</a>
+
                     @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -71,8 +73,8 @@
 
                             <div class="col-auto-lg-2">
 
-                                <select class="form-control" name="quant_resmas" id="quant_resmas">
-                                    <option>Selecione a quantidade...</option>
+                                <select class="form-control" name="quant_resmas" id="quant_resmas" style="width: 120%;">
+                                    <option>Selecione a quantidade</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>

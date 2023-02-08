@@ -58,6 +58,9 @@
                 <ul class="nav justify-content-end">
                     {{-- nova view --}}
 
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/cadastro">Cadastro</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/">Histórico</a>

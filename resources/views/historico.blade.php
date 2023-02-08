@@ -36,12 +36,21 @@
         @endif
         <div class="mh-100" style="width: 1200px; height: 1000px;">
             <div class="card border-dark" style="max-width: 700rem;">
-                <div class="card-header text-white" style="background-color: #044f84;">Histórico de Resmas
+                <div class="card-header text-white" style=" height:58px; background-color: #044f84;">Histórico de Resmas
+
+                    <div class="card-body text-dark">
+
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <ul class="nav nav-pills card-header-pills">
+                           
 
                             <li class="nav-item ">
-                                <a type="button" class="nav-link active " style="margin:-32px 8px;background-color: #05395e;"
+                                <a type="button" class="nav-link active " style="margin:-47px 10px; background-color: #05395e; "
+                                href="{{route('historico')}}">Histórico de Resmas</a>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a type="button" class="nav-link active " style="margin:-47px 8px; background-color: #05395e;"
                                 href="{{route('historico2')}}">Histórico de Impressões</a>
                             </li>
 

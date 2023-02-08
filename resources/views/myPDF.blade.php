@@ -94,6 +94,7 @@
             <tr class="cab">
                 <th style="border-style:solid;">Nome</th>
                 <th style="border-style:solid;">Setor</th>
+                <th style="border-style:solid;">Matricula</th>
                 <th style="border-style:solid;">Quantidade de Resmas</th>
                 <th style="border-style:solid;">Data Solicitação</th>
             </tr>
@@ -103,6 +104,7 @@
                 <tr>
                     <th>{{ $solic->nome }}</th>
                     <th>{{ $solic->setores->Nome }} - {{ $solic->setores->Sigla }}</th>
+                    <th>{{ $solic->matricula}}</th>
                     <th>{{ $solic->quant_resmas }}</th>
                     <th>{{ $solic->created_at->format('d/m/Y') }}</th>
                 </tr>
