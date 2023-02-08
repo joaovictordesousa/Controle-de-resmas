@@ -358,12 +358,6 @@ class setoresSeeder extends Seeder
         ]);
 
         setores::create([
-            'nome'=> 'DEMAP',
-            'sigla'=> 'DA',
-            'impressora' => 'DA_DEMAP_EPSON'
-        ]);
-
-        setores::create([
             'nome'=> 'DIGEP - 1',
             'sigla'=> 'DA',
             'impressora' => 'DA_DIGEP1_EPSON_MONO'
