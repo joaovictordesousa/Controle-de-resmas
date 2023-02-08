@@ -69,7 +69,7 @@ class relatorio extends Controller
       //$solicitacao = Solicitacao::where('id_setor', $request->id_setor)
       //->whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
 
-      $pdf = PDF::loadView('myPDF', $relatorio);
+      $pdf = pdf::loadView('myPDF', $relatorio);
       return $pdf->stream('relatorio.pdf');
     }
     if ($option == 2) {

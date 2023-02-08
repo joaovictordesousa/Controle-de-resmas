@@ -11,7 +11,7 @@ use App\Models\Impressoes;
 use PDF;
 use Maatwebsite\Excel\Facades\CSV;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\RelatorioExport;
+use App\Exports\RelatorioExport2;
 
 
 
@@ -77,13 +77,13 @@ class relatorio_impressaoController extends Controller
 
       //XLS
 
-      return Excel::download(new RelatorioExport($id_setores, $datainicial, $datafinal), 'relatorio.xlsx');
+      return Excel::download(new RelatorioExport2($id_setores, $datainicial, $datafinal), 'relatorio2.xlsx');
     }
     if ($option == 3) {
 
       //CVS
 
-      return Excel::download(new RelatorioExport($id_setores, $datainicial, $datafinal), 'relatorio.csv');
+      return Excel::download(new RelatorioExport2($id_setores, $datainicial, $datafinal), 'relatorio2.csv');
     }
   }
 }

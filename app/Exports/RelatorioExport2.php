@@ -3,7 +3,7 @@
 namespace App\Exports;
 
 use App\Models\RelatorioModel;
-use App\Models\Solicitacao;
+use App\Models\impressoes;
 use App\Models\setores;
 use App\Http\Controllers\relatorio;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -13,14 +13,14 @@ use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 
-class RelatorioExport implements WithMapping, WithHeadings, Fromquery, WithCustomCsvSettings
+class RelatorioExport2 implements WithMapping, WithHeadings, Fromquery, WithCustomCsvSettings
 {
     use Exportable;
 
 
-    public function __construct(int $id_setor, string $datainicial, string $datafinal)
+    public function __construct(int $id_setores, string $datainicial, string $datafinal)
     {
-        $this->id_setor = $id_setor;
+        $this->id_setores = $id_setores;
         $this->datainicial = $datainicial;
         $this->datafinal = $datafinal;
     }
@@ -28,23 +28,23 @@ class RelatorioExport implements WithMapping, WithHeadings, Fromquery, WithCusto
     public function query()
     {
 
-        $solic = Solicitacao::with('setores')->where('id_setor', $this->id_setor)
+        $impresso = Impressoes::with('setores')->where('id_setores', $this->id_setores)
             ->whereBetween('created_at', [$this->datainicial . ' 00:00:00', $this->datafinal . ' 23:59:59']);
 
-        return $solic;
+        return $impresso;
     }
 
 
-    public function map($solicitacoes): array
+    public function map($impressoes): array
     {
         return [
-            $solicitacoes->setores->Nome,
-            $solicitacoes->matricula,
-            $solicitacoes->quant_resmas,
-            $solicitacoes->created_at->format('d/m/Y'),
-            $solicitacoes->with('setores')->where('id_setor', $this->id_setor)
+            $impressoes->setores->Nome,
+            $impressoes->setores->Impressora,
+            $impressoes->quant_impressoes,
+            $impressoes->created_at->format('d/m/Y'),
+            $impressoes->with('setores')->where('id_setores', $this->id_setores)
                 ->whereBetween('created_at', [$this->datainicial . ' 00:00:00', $this->datafinal . ' 23:59:59'])
-                ->sum('quant_resmas'),
+                ->sum('quant_impressoes'),
         ];
     }
 
@@ -52,10 +52,10 @@ class RelatorioExport implements WithMapping, WithHeadings, Fromquery, WithCusto
     {
         return [
             'Setor',
-            'Matrícula',
-            'Quantidade de Resmas',
+            'Impressora',
+            'Quantidade de Impressão',
             'Data De Solicitação',
-            'Total de Resmas'
+            'Total de Impressões'
         ];
     }
 
