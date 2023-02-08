@@ -43,7 +43,7 @@ class SolicitacaoController extends Controller
     {
         $request->validate([
             'id_setor' => 'required|integer',
-            'nome' => 'required',
+            'nome' => 'required|regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
             'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
         ]);
