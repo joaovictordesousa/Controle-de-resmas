@@ -38,8 +38,8 @@ class RelatorioExport implements WithMapping, WithHeadings, Fromquery, WithCusto
     public function map($solicitacoes): array
     {
         return [
-            $solicitacoes->setores->Nome,
             $solicitacoes->matricula,
+            $solicitacoes->setores->Nome,
             $solicitacoes->quant_resmas,
             $solicitacoes->created_at->format('d/m/Y'),
             $solicitacoes->with('setores')->where('id_setor', $this->id_setor)
@@ -51,8 +51,8 @@ class RelatorioExport implements WithMapping, WithHeadings, Fromquery, WithCusto
     public function headings(): array
     {
         return [
-            'Setor',
             'Matrícula',
+            'Setor',            
             'Quantidade de Resmas',
             'Data De Solicitação',
             'Total de Resmas'

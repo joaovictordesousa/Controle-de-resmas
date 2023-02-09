@@ -15,7 +15,18 @@
                 <div class="card-body text-dark">
                     <a class="btn btn-outline-primary" href="/relatorio" role="button">RELATÓRIO RESMAS</a>
         <br><br>
+
                     <p class="card-text">
+
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                         @endif
 
                         <!-- Setor-->
                     <form action="{{ route('gerar-pdf') }}" method="GET">
