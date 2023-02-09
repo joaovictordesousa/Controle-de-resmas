@@ -16,11 +16,11 @@ class historico extends Controller
   public function show(Request $request, Solicitacao $solicitacao)
   {
 
-    $solicitac =  Solicitacao::get('created_at');
+    //$solicitac =  Solicitacao::get('created_at');
 
     $setores = setores::orderby('id')->get();
-
-    $solicitacao = Solicitacao::with('setores')->get();
+//$order='desc';
+    $solicitacao = Solicitacao::with('setores')->orderby('order', 'DESC');
     $search = $request->input('id_setor');
 
         //total
@@ -56,7 +56,7 @@ class historico extends Controller
     return view('historico', [
       'solicitacao' => $solicitacao,
       'setores' => $setores ,
-      'created_at' => $solicitac,
+      //'created_at' => $solicitac,
       'quant_resmas' => $quant_resmas,
       'id' => $id,
 

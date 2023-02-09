@@ -16,6 +16,13 @@
             }).hide();
         });
         </script>
+        <script>
+             $().ready(function() {
+	setTimeout(function () {
+		$('#sumir').hide();
+    }, 3000); // O valor é representado em milisegundos.
+});
+        </script>
 
     <div class="container">
 
@@ -28,7 +35,7 @@
         <br><br>
 
         @if (session('msg'))
-            <div class="alert alert-success" role="alert"style="width: 1200px;">
+            <div id="sumir"class="alert alert-success" role="alert"style="width: 1200px;">
                 <p class="msg">
                     {{ session('msg') }}
                 </p>
@@ -44,13 +51,10 @@
                         <ul class="nav nav-pills card-header-pills">
                            
 
-                            <li class="nav-item ">
-                                <a type="button" class="nav-link active " style="margin:-47px 10px; background-color: #05395e; "
-                                href="{{route('historico')}}">Histórico de Resmas</a>
-                            </li>
+                            
 
                             <li class="nav-item ">
-                                <a type="button" class="nav-link active " style="margin:-47px 8px; background-color: #05395e;"
+                                <a type="button" class="nav-link active " style="margin:-47px 0px; background-color: #05395e;"
                                 href="{{route('historico2')}}">Histórico de Impressões</a>
                             </li>
 

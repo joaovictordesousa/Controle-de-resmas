@@ -21,7 +21,7 @@
                   
             <div class="card-body text-dark">
 
-                <a class="btn btn-outline-primary" href="/cadastro" role="button">CADASTRO DE SOLICITAÇÃO</a>
+                <a class="btn btn-outline-primary" href="/cadastro" role="button">SOLICITAÇÃO DE RESMAS</a>
 
                 <p class="card-text">
                

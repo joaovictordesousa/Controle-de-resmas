@@ -12,13 +12,14 @@ use PhpParser\Node\Expr\Isset_;
 class historico_impressaoController extends Controller
 {
 
-  public function show(Request $request)
+  public function show(Request $request)  
     {
     //Definindo variaveis
-    $impressoes = Impressoes::orderByDesc('id')->get();
+    $impressoes = Impressoes::orderby('id','DESC')->get();
+    // dd($impressoes);
     $setores = setores::orderby('id')->get();
 
-    $impressoes = Impressoes::with('setores')->get();
+    $impressoes = Impressoes::with('setores')->orderby('id','DESC')->get();
     //Inputs
     $search = $request->input('id_setores');
 

@@ -12,7 +12,7 @@
 <div class="container">
     <div class="mh-100" style="width: 1000px; height: 1000px;">
         <div class="card border-dark" style="max-width: 700rem;">
-            <div class="card-header text-white" style="background-color: #044f84;">Cadastro de Solicitação</div>
+            <div class="card-header text-white" style="background-color: #044f84;">Solicitação de resmas</div>
             <div class="card-body text-dark">
                 <p class="card-text">
 
