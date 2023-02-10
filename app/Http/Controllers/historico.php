@@ -31,11 +31,14 @@ class historico extends Controller
     //$search = $request->get('search');
     //$solicitacao = Solicitacao::with('setores')->where('id_setor', 'LIKE', '%' . $search . '%')->paginate(10);
     if(!empty($search)){
-        $solicitacao = Solicitacao::where('id_setor', '=',  $search)->paginate(10)->withQueryString();
+        $solicitacao = Solicitacao::orderby('id','DESC')
+            ->where('id_setor', '=',  $search)
+            ->paginate(10)
+            ->withQueryString();
         unset($quant_resmas);
         $quant_resmas = 0;
     }else{
-        $solicitacao = Solicitacao::with('setores')->paginate(10);
+        $solicitacao = Solicitacao::orderby('id','DESC')->with('setores')->paginate(10);
     }
 
     //$solicitacao = setores::where('Nome', 'LIKE', '%' . $search . '%')->paginate(10);

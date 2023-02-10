@@ -85,8 +85,21 @@ class relatorio extends Controller
       return Excel::download(new RelatorioExport($id_setor, $datainicial, $datafinal), 'relatorio.csv');
     }
   }
-}
+  public function store(Request $request)
+  {
+      $request->validate([
+           'id_setor' => 'required|integer',
+           'datainicial' => 'required',
+           'datafinal' => 'required',
 
+
+      ]);
+
+      Solicitacao::Create($request->all());
+
+      return redirect()->view('relatorio');
+  }
+}
         //public function buscar($id_setor)
         //{
 

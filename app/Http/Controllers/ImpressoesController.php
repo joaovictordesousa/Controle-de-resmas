@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Impressoes;
 use Illuminate\Http\Request;
 use App\Models\Setores;
+use Illuminate\Support\Facades\Auth;
 
 class ImpressoesController extends Controller
 {
@@ -39,7 +40,9 @@ class ImpressoesController extends Controller
         $post = $request->all();
         if($post){
             $impressoes = new Impressoes();
+       //     $users = Auth::users()->name;
 
+      //      $users->name = $post['name'];
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
@@ -87,7 +90,7 @@ class ImpressoesController extends Controller
      */
     public function edit(Impressoes $impressoes)
     {
-        //
+
     }
 
     /**
@@ -99,7 +102,7 @@ class ImpressoesController extends Controller
      */
     public function update(Request $request, Impressoes $impressoes)
     {
-        //
+
     }
 
     /**
@@ -110,6 +113,6 @@ class ImpressoesController extends Controller
      */
     public function destroy(Impressoes $impressoes)
     {
-        //
+
     }
 }

@@ -47,8 +47,8 @@ class SolicitacaoController extends Controller
             'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
         ]);
-        $messages = [
-            'quant_resmas' => 'Quantidade de Resmas precisa ser inteiro'        
+        $messages = $request->messages(); [
+            'quant_resmas' => 'Quantidade de Resmas precisa ser inteiro'
         ];
 
         Solicitacao::create($request->all());

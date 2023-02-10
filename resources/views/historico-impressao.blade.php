@@ -50,7 +50,7 @@
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <ul class="nav nav-pills card-header-pills">
 
-                                   
+
 
                                     <li class="nav-item">
                                         <a type="button" class="nav-link active " style="margin:-47px 0px; background-color: #05395e;"
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
 
                 <div class="card-body text-dark">
                     <p class="card-text">
@@ -101,6 +101,7 @@
                                 <th>Impressora</th>
                                 <th>Impressões</th>
                                 <th>Data da solicitação</th>
+
                             </tr>
 
                         </thead>
@@ -113,8 +114,10 @@
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
                                 <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
                                 <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
+                                {{-- <td>{{$users->name}}</td> --}}
                             </tr>
                             @endforeach
+                            {{-- {{$users}} --}}
                         </tbody>
                         <style>
                             #tessste{
@@ -133,7 +136,7 @@
                     @endif
 
                     </table>
-                 
+
 
                     <div>
                         {{-- paginate passando os parametros que estão pesquisando' --}}

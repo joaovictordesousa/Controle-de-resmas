@@ -18,7 +18,7 @@
                     <p class="card-text">
 
                         <!-- Setor-->
-                    <form action="{{ route('gera-pdf') }}" method="GET">
+                    <form action="{{ route('gera-pdf') }}" method="get">
                         @csrf
                         <div class="form-group">
                             <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
