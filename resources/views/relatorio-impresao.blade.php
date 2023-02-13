@@ -97,5 +97,7 @@
 
                         </div>
                         <br>
+                    </form>
 
                     @endsection
+

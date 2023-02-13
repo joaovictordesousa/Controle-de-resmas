@@ -14,12 +14,14 @@ class historico_impressaoController extends Controller
 
   public function show(Request $request)  
     {
-    //Definindo variaveis
-    $impressoes = Impressoes::orderby('id','DESC')->get();
+
+    //Definindo variaveis      
+
+      // return view('posts.index', compact('posts'));
+    
     // dd($impressoes);
     $setores = setores::orderby('id')->get();
 
-    $impressoes = Impressoes::with('setores')->orderby('id','DESC')->get();
     //Inputs
     $search = $request->input('id_setores');
 
@@ -43,4 +45,13 @@ class historico_impressaoController extends Controller
 
     ]);
   }
+
+  public function index()
+  {
+
+      $post = Impressoes::orderBy('id', 'desc')->get();
+
+        return view('historico-impressao', compact('posts'));
+  }
+
 }
