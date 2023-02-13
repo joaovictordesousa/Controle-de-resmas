@@ -29,7 +29,7 @@
                          @endif
 
                         <!-- Setor-->
-                    <form action="{{ route('gerar-pdf') }}" method="GET">
+                    <form action="{{ route('gerar-pdf') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
@@ -99,5 +99,6 @@
                         <br>
                     </form>
 
+                    </form>
                     @endsection
 

@@ -23,7 +23,9 @@ class relatorio_impressaoController extends Controller
     $setores = Setores::orderby('id')->get();
 
     $impressoes = Impressoes::where('id_setores', '=', $request->id_setores)
-      ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']);
+        ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']
+
+    );
 
     /*if($request->datainicial && $request->datafinal){
          $solicitacao = Solicitacao::whereBetween('created_at', '=', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59'])->get();
@@ -56,7 +58,7 @@ class relatorio_impressaoController extends Controller
 
       $total = Impressoes::where('id_setores', $id_setores)
         ->whereBetween('created_at', [$datainicial . ' 00:00:00', $datafinal . ' 23:59:59'])
-        ->sum('quant_impressoes',);
+        ->sum('quant_impressoes');
 
 
       $relatorio = [
@@ -85,6 +87,20 @@ class relatorio_impressaoController extends Controller
 
       return Excel::download(new RelatorioExport2($id_setores, $datainicial, $datafinal), 'relatorio2.csv');
     }
+  }
+  public function store(Request $request)
+  {
+      $request->validate([
+           'id_setores' => 'required|integer',
+           'datainicial' => 'required',
+           'datafinal' => 'required',
+
+
+      ]);
+
+      Impressoes::Create($request->all());
+
+      return redirect()->view('relatorio-impresao');
   }
 }
 

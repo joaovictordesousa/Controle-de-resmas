@@ -47,6 +47,8 @@ Route::group(['middleware' => ['auth.session']], function() {
 
   Route::get('/generate-pdf', [relatorio::class, 'Docs'])
   ->name('gera-pdf');
+  Route::post('/generate-pdf', [relatorio::class, 'store'])
+  ->name('gera-pdf');
 
   Route::get('/search', [historico::class, 'ajax'])
   ->name('posts.search');
@@ -73,7 +75,9 @@ Route::group(['middleware' => ['auth.session']], function() {
   Route::get('/relatorio-impressao', [relatorio_impressaoController::class, 'relatorio'])
     ->name('relatorio.impressao');
 
-  Route::get('/geracao-pdf', [relatorio_impressaoController::class, 'Docs'])
+Route::get('/geracao-pdf', [relatorio_impressaoController::class, 'Docs'])
+    ->name('gerar-pdf');
+  Route::post('/geracao-pdf', [relatorio_impressaoController::class, 'store'])
     ->name('gerar-pdf');
 
 require __DIR__.'/auth.php';
