@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('quant_impressoes');
             $table->foreignId('id_setores')->contraint()->references('id')->on('setores');
-            // $table->foreignId('id_setoresimpressora')->contraint();
+            $table->foreignId('id_users')->contraint()->references('id')->on('users');
             $table->timestamps();
         });
     }

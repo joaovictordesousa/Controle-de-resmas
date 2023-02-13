@@ -45,6 +45,7 @@ class ImpressoesController extends Controller
       //      $users->name = $post['name'];
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
+            $impressoes->auth->id_users = $post['id_users'];
             $impressoes->save();
         // }
        // dd($request->all());

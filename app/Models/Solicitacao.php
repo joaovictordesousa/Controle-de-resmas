@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\SolicitacaoController;
 use App\Models\setores;
+use App\Models\users;
 
 class Solicitacao extends Model
 {
@@ -19,4 +20,9 @@ class Solicitacao extends Model
 
     return $this->belongsTo(setores::class, 'id_setor' , 'id');
     }
+    
+    public function users(){
+
+        return $this->belongsTo(users::class, 'id_users','id');
+        }
 }

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\impressoes;
+use App\Models\solicitacao;
 
 class User extends Authenticatable
 {
@@ -43,4 +45,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function impressoes(){
+
+        return $this->hasMany(Impressoes::class,'');
+    }
+
+    public function solicitacao(){
+
+        return $this->hasMany(Solicitacao::class);
+    }
 }
