@@ -101,22 +101,24 @@
                                 <th>Impressora</th>
                                 <th>Impressões</th>
                                 <th>Data da solicitação</th>
+                                <th>User</th>
 
                             </tr>
 
                         </thead>
+                      
                         <tbody>
                             @foreach ($impressoes as $impress)
-                            
+
                             <tr>
                                 <td value="{{$impress->id }}">{{$impress->id}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Sigla}} - {{$impress->setores->Nome}}</td>
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
                                 <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
                                 <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
-                                {{-- <td>{{$users->name}}</td> --}}
+                                <td>{{ auth()->user()->name }}</td>
                             </tr>
-                           
+
                             @endforeach
                             {{-- {{$users}} --}}
                         </tbody>

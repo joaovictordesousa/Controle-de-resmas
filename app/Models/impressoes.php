@@ -13,7 +13,7 @@ class impressoes extends Model
     use HasFactory;
     protected $table = 'impressoes';
 
-    protected $fillable = ['quant_impressoes','id_setores'];
+    protected $fillable = ['quant_impressoes','id_setores', 'id_users'];
 
     public function setores(){
     return $this->belongsTo(Setores::class, 'id_setores' , 'id');
