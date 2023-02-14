@@ -62,7 +62,6 @@
                             <input type="number" class="form-control" name="quant_impressoes" id="quant_impressoes" placeholder="Digite a quantidade" style="border-radius: 5px;">
 
                         </div>
-                        {{dd($impressoes)}}
 
                     <br><br>
                     <div class="container">
