@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('matricula');
             $table->integer('quant_resmas');
-            $table->foreignId('id_setor')->constrained('setores', 'id'); 
-            $table->foreignId('id_users')->contraint()->references('id')->on('users');          
+            $table->foreignId('id_setor')->constrained('setores', 'id');
+            $table->foreignId('id_users')->contraint()->references('id')->on('users');
             $table->timestamps();
         });
     }

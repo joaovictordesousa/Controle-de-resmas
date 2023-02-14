@@ -23,34 +23,19 @@ class ImpressoesController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     *@param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function impressorateste(){
-    //     $impressora = Impressora::find(1);
-
-    // foreach ($impressora->setores as $setores) {
-    //     echo $setores->pivot->created_at;
-    // }
-    // dd( $impressora);
-    // }
     public function create(Request $request)
     {
 
         $post = $request->all();
         if($post){
             $impressoes = new Impressoes();
-       //     $users = Auth::users()->name;
-
-      //      $users->name = $post['name'];
             $impressoes->id_setores = $post['id_setores'];
-            $impressoes->quant_impressoes = $post['quant_impressoes'];  
-            $impressoes->auth->id_users = $post['id_users'];
+            $impressoes->quant_impressoes = $post['quant_impressoes'];
+            $impressoes->id_users = auth()->user()->name->save();
             $impressoes->save();
-        // }
-       // dd($request->all());
-
-      // return view ('cadastro-impressao');
         }
     }
 
