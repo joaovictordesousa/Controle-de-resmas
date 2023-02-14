@@ -44,8 +44,7 @@
 
         <div class="mh-100" style="width: 1200px; height: 1000px;">
             <div class="card border-dark" style="max-width: 700rem;">
-                <div class="card-header text-white" style="height:58px; background-color: #044f84;">Histórico de Impressões
-
+                <div class="card-header text-white" style="height:58px; background-color: #044f84; text-align: center;"> <h5>HISTÓRICO DE IMPRESSÕES</h5>
                 <div class="card-body text-dark">
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <ul class="nav nav-pills card-header-pills">
@@ -53,7 +52,7 @@
 
 
                                     <li class="nav-item">
-                                        <a type="button" class="nav-link active " style="margin:-47px 0px; background-color: #05395e;"
+                                        <a type="button" class="nav-link active " style="margin:-54px 0px; background-color: #05395e;"
                                         href="{{route('historico')}}">Histórico de Resmas</a>
                                     </li>
 
