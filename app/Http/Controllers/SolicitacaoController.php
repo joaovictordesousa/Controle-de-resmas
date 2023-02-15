@@ -28,7 +28,7 @@ class SolicitacaoController extends Controller
         $solicitacao = new Solicitacao();
         $solicitacao->id_setor = $request->input('id_setor');
         $solicitacao->quant_resmas = $request->input('quant_resmas');
-        $solicitacao->id_users = $request->auth()->user()->name ('id_users');
+        $solicitacao->id_users =  $request->auth()->user() ['id_users'];
         $solicitacao->save();
     }
 

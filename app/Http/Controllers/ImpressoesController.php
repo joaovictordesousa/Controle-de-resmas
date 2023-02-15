@@ -17,6 +17,8 @@ class ImpressoesController extends Controller
     public function index()
     {
         // declarar as variaveis passando para a view
+
+
         $id_setores = Setores::get();
             return view('cadastro_impressao', ['id_setores' => $id_setores]);
     }
@@ -28,13 +30,13 @@ class ImpressoesController extends Controller
      */
     public function create(Request $request)
     {
-
         $post = $request->all();
         if($post){
+            $id_users = Auth::id();
             $impressoes = new Impressoes();
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
-            $impressoes->id_users = auth()->user()->name->save();
+            $impressoes->id_users = $id_users ['id_users'];
             $impressoes->save();
         }
     }

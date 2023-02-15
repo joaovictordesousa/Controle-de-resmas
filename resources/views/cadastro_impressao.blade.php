@@ -11,19 +11,19 @@
 
 <div class="container">
 
-    
+
     <br><br>
 
     <div class="mh-100" style="width: 1000px; height: 1000px;">
         <div class="card border-dark" style="max-width: 700rem;">
             <div class="card-header text-white" style="background-color: #044f84; text-align: center;"><h4>GESTÃO DE IMPRESSÃO</h4></div>
-                  
+
             <div class="card-body text-dark">
 
                 <a class="btn btn-outline-primary" href="/cadastro" role="button">SOLICITAÇÃO DE RESMAS</a>
 
                 <p class="card-text">
-               
+
                     @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -55,16 +55,13 @@
 
                    {{-- cadastro de Impressões --}}
                         <div class="form-group">
-                                        
+
                             <br>
                             <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Quantidade de Impressões:</label>
                             <br>
                             <input type="number" class="form-control" name="quant_impressoes" id="quant_impressoes" placeholder="Digite a quantidade" style="border-radius: 5px;">
-                            
-                        </div>
-                        
 
-                    {{-- Cadastrar quant. resmas --}}
+                        </div>
 
                     <br><br>
                     <div class="container">
@@ -75,7 +72,9 @@
 
                         </div>
                     </div>
+
             </div>
+
             </form>
             </p>
         </div>
