@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Impressoes;
 use Illuminate\Http\Request;
 use App\Models\Setores;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ImpressoesController extends Controller
@@ -32,11 +33,14 @@ class ImpressoesController extends Controller
     {
         $post = $request->all();
         if($post){
-            $id_users = Auth::id();
             $impressoes = new Impressoes();
+            $user = auth()->user();
+            $impressoes->id_users = $user->id;
+        //  $user = Auth::guard()->user();
+        //  $impressoes->id_users = $user->id ['id_users'];
+        //  $impressoes->id_users = $post  ['id_users'];
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
-            $impressoes->id_users = $id_users ['id_users'];
             $impressoes->save();
         }
     }
@@ -67,7 +71,7 @@ class ImpressoesController extends Controller
      */
     public function show(Impressoes $impressoes)
     {
-
+        $testeOwner = User::where('id',)
     }
 
     /**

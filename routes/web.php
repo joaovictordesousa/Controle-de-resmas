@@ -25,7 +25,7 @@ use App\Http\Controllers\relatorio_impressaoController;
 |
 */
 
-Route::group(['middleware' => ['auth.session']], function() {
+Route::group(['middleware' => 'auth.session'], function() {
 
     Route::get('/', [historico::class, 'show'])->middleware(['auth'])
     ->name('historico');
@@ -58,9 +58,9 @@ Route::group(['middleware' => ['auth.session']], function() {
   //->name('historico');
 
   // criar rotas de impressao desde cadastro ao historico
-  Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
+  Route::get('/criar-impressao', [ImpressoesController::class, 'index'])->middleware(['auth']);
 
-  Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
+  Route::post('/criar-impressao', [ImpressoesController::class, 'store'])->middleware(['auth']);
   //->name('criar-impressao' ,function () {
   //  return view('historico-impressao');});
 

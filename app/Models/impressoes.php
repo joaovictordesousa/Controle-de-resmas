@@ -21,7 +21,7 @@ class impressoes extends Model
 
     }
 
-    public function users(){
+    public function id_users(){
 
         return $this->belongsTo(users::class, 'id_users','id');
         }

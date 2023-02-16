@@ -25,7 +25,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        @endif
+                         @endif
 
                         <!-- Setor-->
                     <form action="{{ route('gera-pdf') }}" method="POST">
