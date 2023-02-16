@@ -17,6 +17,16 @@
         <br><br>
                     <p class="card-text">
 
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                         @endif
+
                         <!-- Setor-->
                     <form action="{{ route('gera-pdf') }}" method="get">
                         @csrf
