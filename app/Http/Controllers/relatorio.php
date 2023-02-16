@@ -88,16 +88,17 @@ class relatorio extends Controller
   public function store(Request $request)
   {
       $request->validate([
-           'id_setor' => 'required|integer',
+           'id_setores' => 'required|integer',
            'datainicial' => 'required',
            'datafinal' => 'required',
-
+           'documentos' => 'required'
 
       ]);
 
       Solicitacao::Create($request->all());
 
       return redirect()->view('relatorio');
+
   }
 }
         //public function buscar($id_setor)

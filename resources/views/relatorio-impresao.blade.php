@@ -15,7 +15,6 @@
                 <div class="card-body text-dark">
                     <a class="btn btn-outline-primary" href="/relatorio" role="button">RELATÓRIO RESMAS</a>
         <br><br>
-
                     <p class="card-text">
 
                         @if ($errors->any())
@@ -97,8 +96,6 @@
 
                         </div>
                         <br>
-                    </form>
-
                     </form>
                     @endsection
 

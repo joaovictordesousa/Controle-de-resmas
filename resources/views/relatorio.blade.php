@@ -17,15 +17,25 @@
         <br><br>
                     <p class="card-text">
 
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+
                         <!-- Setor-->
-                    <form action="{{ route('gera-pdf') }}" method="get">
+                    <form action="{{ route('gera-pdf') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
 
-                            <select class="form-control" name="id_setor" id="id_setor">
+                            <select class="form-control" name="id_setor" id="id_setor" >
 
-                                <option>Selecione um setor</option>
+                                <option value="">Selecione um setor</option>
 
                                 @foreach ($setores as $setor)
                                     <option value="{{ $setor->id }}">{{ $setor->Sigla }} - {{ $setor->Nome }} &nbsp - &nbsp {{$setor->Impressora}}
@@ -43,7 +53,7 @@
                                 <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
                                     inline="true">
                                     <input placeholder="Select date" type="date" id="created_at" name="datainicial"
-                                        class="form-control">
+                                        class="form-control" >
                                     <i class="fas fa-calendar input-prefix"></i>
                                 </div>
 
@@ -59,7 +69,7 @@
                                 <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
                                     inline="true">
                                     <input placeholder="Select date" type="date" id="created_at" name="datafinal"
-                                        class="form-control">
+                                        class="form-control" >
                                     <i class="fas fa-calendar input-prefix"></i>
                                 </div>
 
@@ -67,13 +77,13 @@
 
                         </div>
                         <br>
-                        <!--Documentos-->
+                    <!--Documentos-->
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Documento:</label>
                         <div class="form-group">
 
-                            <select class="form-control" name="documentos" required>
+                            <select class="form-control" name="documentos" >
 
-                                <option>Escolha uma opção de documento</option>
+                                <option value="" >Escolha uma opção de documento</option>
                                 <option value="1">PDF</option>
                                 <option value="2">XLS</option>
                                 <option value="3">CSV</option>
@@ -88,6 +98,6 @@
 
                         </div>
                         <br>
-
+                    </form>
                     @endsection
     

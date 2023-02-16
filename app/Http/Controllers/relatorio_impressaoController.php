@@ -94,7 +94,7 @@ class relatorio_impressaoController extends Controller
            'id_setores' => 'required|integer',
            'datainicial' => 'required',
            'datafinal' => 'required',
-
+           'documentos' => 'required'
 
       ]);
 
