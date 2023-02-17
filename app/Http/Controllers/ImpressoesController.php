@@ -34,10 +34,7 @@ class ImpressoesController extends Controller
         $post = $request->all();
         if($post){
             $impressoes = new Impressoes();
-            $impressoes->id_users = $post = auth()->user() ('id_users');
-        //  $user = Auth::guard()->user();
-        //  $impressoes->id_users = $user->id ['id_users'];
-        //  $impressoes->id_users->name = $post  ['id_users'];
+            $impressoes->id_users = $post['id_users'];
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
@@ -54,7 +51,8 @@ class ImpressoesController extends Controller
     {
         $request->validate([
             'id_setores' => 'required|integer',
-            'quant_impressoes' => 'required|integer'
+            'quant_impressoes' => 'required|integer',
+            'id_users' => 'required',
         ]);
 
         Impressoes::create($request->all());

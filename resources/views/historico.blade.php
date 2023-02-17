@@ -49,9 +49,9 @@
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <ul class="nav nav-pills card-header-pills">
-                           
 
-                            
+
+
 
                             <li class="nav-item ">
                                 <a type="button" class="nav-link active " style="margin:-54px 0px; background-color: #05395e;"
@@ -120,6 +120,7 @@
                                     <td value="{{ $solic->id }}">{{ $solic->setores->Sigla }} - {{ $solic->setores->Nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
+                                    <td value="{{$solic->id }}">{{$solic->id_users }}</td>
                                 </tr>
 
                             @endforeach

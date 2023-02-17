@@ -112,6 +112,7 @@
                         </div>
                     </div>
             </div>
+            <input type="text" id="id_users" value="{{ Auth::user()->id }}" name="id_users" >
             </form>
             </p>
         </div>

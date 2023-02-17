@@ -28,7 +28,7 @@ class SolicitacaoController extends Controller
         $solicitacao = new Solicitacao();
         $solicitacao->id_setor = $request->input('id_setor');
         $solicitacao->quant_resmas = $request->input('quant_resmas');
-        $solicitacao->id_users =  $request->auth()->user() ['id_users'];
+        $solicitacao->id_users =  $request->input('id_users');
         $solicitacao->save();
     }
 
@@ -57,10 +57,8 @@ class SolicitacaoController extends Controller
             'nome' => 'required|regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
             'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
+            'id_users' => 'required|integer'
         ]);
-        $messages = $request->messages(); [
-            'quant_resmas' => 'Quantidade de Resmas precisa ser inteiro'
-        ];
 
         Solicitacao::create($request->all());
 

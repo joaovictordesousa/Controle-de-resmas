@@ -114,7 +114,7 @@
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
                                 <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
                                 <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
-                                <td>{{ auth()->user()->name; }}</td>
+                                <td value="{{$impress->id }}">{{$impress->id_users }}</td>
                             </tr>
 
                             @endforeach

@@ -20,6 +20,6 @@ class setores extends Model
     }
     public function impressoes(){
 
-        return $this->hasMany(Impressoes::class,'');
+        return $this->hasMany(Impressoes::class);
     }
 }

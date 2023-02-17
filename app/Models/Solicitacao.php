@@ -14,7 +14,7 @@ class Solicitacao extends Model
 
     protected $table = 'solicitacoes';
 
-    protected $fillable = ['quant_resmas', 'id_setor', 'nome', 'matricula'];
+    protected $fillable = ['quant_resmas', 'id_setor', 'nome', 'matricula', 'id_users'];
 
     public function setores(){
 

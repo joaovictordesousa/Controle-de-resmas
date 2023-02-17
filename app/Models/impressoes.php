@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Setores;
-use App\Models\users;
+use App\Models\Users;
 
 class impressoes extends Model
 {
@@ -23,7 +23,7 @@ class impressoes extends Model
 
     public function id_users(){
 
-        return $this->belongsTo(users::class, 'id_users','id');
+        return $this->belongsTo(Users::class, 'id_users','id');
         }
 }
 
