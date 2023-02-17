@@ -20,6 +20,7 @@ class ImpressoesController extends Controller
         // declarar as variaveis passando para a view
 
 
+
         $id_setores = Setores::get();
             return view('cadastro_impressao', ['id_setores' => $id_setores]);
     }
@@ -31,14 +32,16 @@ class ImpressoesController extends Controller
      */
     public function create(Request $request)
     {
+        $impez = Impressoes::find('id');
+        $impez = collect()->auth()->user();
+        session(['user' => $impez->id_users]);
         $post = $request->all();
         if($post){
             $impressoes = new Impressoes();
-            $user = auth()->user();
-            $impressoes->id_users = $user->id;
+            $impressoes->id_users = $impez->get('id_users');
         //  $user = Auth::guard()->user();
         //  $impressoes->id_users = $user->id ['id_users'];
-        //  $impressoes->id_users = $post  ['id_users'];
+        //    $impressoes->id_users->name = $post  ['id_users'];
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
@@ -69,9 +72,13 @@ class ImpressoesController extends Controller
      * @param  \App\Models\Impressoes  $impressoes
      * @return \Illuminate\Http\Response
      */
-    public function show(Impressoes $impressoes)
+    public function show(Impressoes $impressoes,$id)
     {
-        $testeOwner = User::where('id',)
+        $teste = Impressoes::findOrFail($id);
+        // recuperando id do usuario ashuashuas
+        $testeOwner = User::where('id', $teste->id_users)->first()->toArray();
+
+        return view('historico2', ['id' => $teste, 'id' =>$testeOwner]);
     }
 
     /**
