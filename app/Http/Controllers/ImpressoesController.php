@@ -19,10 +19,9 @@ class ImpressoesController extends Controller
     {
         // declarar as variaveis passando para a view
 
-
-
         $id_setores = Setores::get();
             return view('cadastro_impressao', ['id_setores' => $id_setores]);
+
     }
 
     /**
@@ -32,16 +31,13 @@ class ImpressoesController extends Controller
      */
     public function create(Request $request)
     {
-        $impez = Impressoes::find('id');
-        $impez = collect()->auth()->user();
-        session(['user' => $impez->id_users]);
         $post = $request->all();
         if($post){
             $impressoes = new Impressoes();
-            $impressoes->id_users = $impez->get('id_users');
+            $impressoes->id_users = $post = auth()->user() ('id_users');
         //  $user = Auth::guard()->user();
         //  $impressoes->id_users = $user->id ['id_users'];
-        //    $impressoes->id_users->name = $post  ['id_users'];
+        //  $impressoes->id_users->name = $post  ['id_users'];
             $impressoes->id_setores = $post['id_setores'];
             $impressoes->quant_impressoes = $post['quant_impressoes'];
             $impressoes->save();
@@ -74,11 +70,11 @@ class ImpressoesController extends Controller
      */
     public function show(Impressoes $impressoes,$id)
     {
-        $teste = Impressoes::findOrFail($id);
+        // $teste = Impressoes::findOrFail($id);
         // recuperando id do usuario ashuashuas
-        $testeOwner = User::where('id', $teste->id_users)->first()->toArray();
+        // $testeOwner = User::where('id', $teste->id_users)->first()->toArray();
 
-        return view('historico2', ['id' => $teste, 'id' =>$testeOwner]);
+        // return view('historico2', ['id' => $teste, 'id' =>$testeOwner]);
     }
 
     /**

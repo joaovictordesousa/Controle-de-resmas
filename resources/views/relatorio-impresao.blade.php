@@ -34,7 +34,6 @@
                             <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Setor:</label>
                             <select class="form-control" name="id_setores" id="id_setores">
                                 <option>Selecione um setor</option>
-
                                 @foreach ($setores as $setor)
                                     <option value="{{ $setor->id }}">{{ $setor->Sigla }} - {{ $setor->Nome }} &nbsp - &nbsp {{$setor->Impressora}}
                                     </option>
@@ -46,7 +45,6 @@
                         <!--Data inicial-->
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Data inicial:</label>
                         <div class="container">
-
                             <div class="container">
                                 <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
                                     inline="true">
@@ -54,7 +52,6 @@
                                         class="form-control">
                                     <i class="fas fa-calendar input-prefix"></i>
                                 </div>
-
                             </div>
                         </div>
                         <br>
@@ -62,7 +59,6 @@
                         <!--Data final-->
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Data final:</label>
                         <div class="container">
-
                             <div class="container">
                                 <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
                                     inline="true">
@@ -80,13 +76,10 @@
                         <div class="form-group">
 
                             <select class="form-control" name="documentos" required>
-
                                 <option>Escolha uma opção de documento</option>
                                 <option value="1">PDF</option>
                                 <option value="2">XLS</option>
                                 <option value="3">CSV</option>
-
-
                             </select>
                         </div>
                         <br>
