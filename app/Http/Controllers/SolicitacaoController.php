@@ -25,18 +25,25 @@ class SolicitacaoController extends Controller
      */
     public function create(Request $request)
     {
-        $post = $request->all();
-        if($post){
         $solicitacao = new Solicitacao();
-        $solicitacao->id_setor = $post ['id_setor'];
-        $solicitacao->matricula = $post ['matricula'];
-        $solicitacao->nome = $post ['nome'];
-        $solicitacao->quant_resmas = $post ['quant_resmas'];
-        $solicitacao->id_users =  $post ['id_users'];
+        $solicitacao->id_setor = $request->input('id_setor');
+        $solicitacao->quant_resmas = $request->input('quant_resmas');
+        $solicitacao->id_users =  $request->auth()->user() ['id_users'];
         $solicitacao->save();
-        }
     }
 
+    // {
+    //     $post = $request->all();
+    //     if($post){
+    //     $solicitacao = new Solicitacao();
+    //     $solicitacao->id_setor = $post ['id_setor'];
+    //     $solicitacao->matricula = $post ['matricula'];
+    //     $solicitacao->nome = $post ['nome'];
+    //     $solicitacao->quant_resmas = $post ['quant_resmas'];
+    //     $solicitacao->id_users =  $post ['id_users'];
+    //     $solicitacao->save();
+    //     }
+    // }
     /**
      * Store a newly created resource in storage.
      *
@@ -51,7 +58,7 @@ class SolicitacaoController extends Controller
             'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
         ]);
-        $request->messages(); [
+        $messages = $request->messages(); [
             'quant_resmas' => 'Quantidade de Resmas precisa ser inteiro'
         ];
 
