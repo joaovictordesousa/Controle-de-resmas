@@ -18,11 +18,11 @@ class Solicitacao extends Model
 
     public function setores(){
 
-    return $this->belongsTo(setores::class, 'id_setor' , 'id');
+    return $this->belongsTo(setores::class, 'id_setor' , 'id','name');
     }
 
     public function id_users(){
 
-        return $this->belongsTo(users::class, 'id_users','id');
+        return $this->belongsTo(users::class, 'id_users','id','name');
         }
 }

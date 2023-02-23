@@ -23,7 +23,7 @@ class impressoes extends Model
 
     public function id_users(){
 
-        return $this->belongsTo(Users::class, 'id_users','id');
+        return $this->belongsTo(Users::class, 'id_users','id','name');
         }
 }
 
