@@ -100,7 +100,7 @@
                                 <th>Impressora</th>
                                 <th>Impressões</th>
                                 <th>Data da solicitação</th>
-                                <th>User</th>
+                                <th>Usuário</th>
 
                             </tr>
 
@@ -132,6 +132,7 @@
                             <td></td>
                             <td></td>
                             <td>{{$quant_impressoes}}</td>
+                            <td></td>
                             <td></td>
                         </tfoot>
                     @endif

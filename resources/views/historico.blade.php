@@ -104,6 +104,7 @@
                                 <th>Setor</th>
                                 <th>Quantidade de resmas</th>
                                 <th>Data da solicitação</th>
+                                <th>Usuário</th>
 
                                 {{-- <th id="ediatr">...</th> --}}
 
@@ -139,6 +140,7 @@
                             <td></td>
                             <td></td>
                             <td>{{ $quant_resmas}}</td>
+                            <td></td>
                             <td></td>
                         </tfoot>
                     @endif

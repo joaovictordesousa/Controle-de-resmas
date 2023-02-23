@@ -57,9 +57,8 @@
                                 placeholder="Digite aqui...">
 
                     <br>
-                    <br>
-
-
+                    <input class="form-control" type="text" id="id_users" value="{{ Auth::user()->id }}" name="id_users" hidden> {{-- input rafa user --}}
+                    <br><br>
                     {{-- Cadastrar quant. resmas --}}
 
                     <div class="container">
@@ -112,7 +111,7 @@
                         </div>
                     </div>
             </div>
-            <input type="text" id="id_users" value="{{ Auth::user()->id }}" name="id_users" >
+           
             </form>
             </p>
         </div>
