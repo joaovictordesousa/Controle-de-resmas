@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     public function impressoes(){
 
-        return $this->hasMany(Impressoes::class,'');
+        return $this->hasMany(Impressoes::class);
     }
 
     public function solicitacao(){

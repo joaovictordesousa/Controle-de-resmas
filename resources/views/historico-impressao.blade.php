@@ -106,6 +106,9 @@
 
                         </thead>
                         <tbody>
+
+                            
+
                             @foreach ($impressoes as $impress)
 
                             <tr>
@@ -114,9 +117,10 @@
                                 <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
                                 <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
                                 <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
-                                <td value="{{$impress->id }}">{{$impress->id_users }}</td>
+                                <td value="{{$impress->id }}">{{$impress->id_users}}</td>
+                               
                             </tr>
-
+                        
                             @endforeach
                             {{-- {{$users}} --}}
                         </tbody>
