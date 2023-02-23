@@ -77,7 +77,7 @@
         </div>
     </div>
     <div>
-        <h2>Controle de Impressões</h2>
+        <h2>Gestão de Impressões</h2>
     </div>
 
     <div>

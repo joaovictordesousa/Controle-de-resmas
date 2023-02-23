@@ -66,8 +66,14 @@ class relatorio_impressaoController extends Controller
         'date' => date('d/m/Y'),
         'impressoes' => $impressoes,
         'total' => $total,
-        'id_setores' => $id_setores,
       ];
+      $request->validate([
+        'id_setores' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+
+   ]);
 
       //$solicitacao = Solicitacao::where('id_setor', $request->id_setor)
       //->whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
@@ -78,43 +84,41 @@ class relatorio_impressaoController extends Controller
     if ($option == 2) {
 
       //XLS
+      $request->validate([
+        'id_setores' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+
+   ]);
 
       return Excel::download(new RelatorioExport2($id_setores, $datainicial, $datafinal), 'relatorio2.xlsx');
     }
     if ($option == 3) {
 
       //CVS
+      $request->validate([
+        'id_setores' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+
+   ]);
 
       return Excel::download(new RelatorioExport2($id_setores, $datainicial, $datafinal), 'relatorio2.csv');
     }
+    $request->validate([
+        'id_setores' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+
+   ]);
+
+   Impressoes::Create($request->all());
+
+   return redirect()->view('relatorio-impresao');
   }
-  public function store(Request $request)
-  {
-      $request->validate([
-           'id_setores' => 'required|integer',
-           'datainicial' => 'required',
-           'datafinal' => 'required',
-           'documentos' => 'required'
 
-      ]);
 
-      Impressoes::Create($request->all());
-
-      return redirect()->view('relatorio-impresao');
-  }
 }
-
-        //public function buscar($id_setor)
-        //{
-
-          //$solicitacao = solicitacao::find($id_setor);
-          //$data = RelatorioModel::whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
-
-
-        //}
-
-     // function data(Request $request){
-
-    //$data = RelatorioModel::whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
-
-  //  }

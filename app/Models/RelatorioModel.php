@@ -9,8 +9,8 @@ class RelatorioModel extends Model
 {
     use HasFactory;
 
-    
-    public $table = 'solicitacoes';
 
-    
+    public $table = 'solicitacoes, impressoes';
+
+
 }

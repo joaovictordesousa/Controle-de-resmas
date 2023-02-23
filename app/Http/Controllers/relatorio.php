@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Setores;
 use App\Models\Solicitacao;
-use App\Models\RelatorioModel;
 use PDF;
-use Maatwebsite\Excel\Facades\CSV;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\RelatorioExport;
 
@@ -26,10 +24,10 @@ class relatorio extends Controller
       ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']);
 
 
+
     /*if($request->datainicial && $request->datafinal){
          $solicitacao = Solicitacao::whereBetween('created_at', '=', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59'])->get();
         }*/
-
 
 
     return view('relatorio', compact('setores'));
@@ -66,6 +64,13 @@ class relatorio extends Controller
         'total' => $total,
       ];
 
+      $request->validate([
+        'id_setor' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+
+   ]);
       //$solicitacao = Solicitacao::where('id_setor', $request->id_setor)
       //->whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
 
@@ -75,43 +80,39 @@ class relatorio extends Controller
     if ($option == 2) {
 
       //XLS
+      $request->validate([
+        'id_setor' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+
+   ]);
 
       return Excel::download(new RelatorioExport($id_setor, $datainicial, $datafinal), 'relatorio.xlsx');
     }
     if ($option == 3) {
 
       //CVS
+      $request->validate([
+        'id_setor' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+
+   ]);
 
       return Excel::download(new RelatorioExport($id_setor, $datainicial, $datafinal), 'relatorio.csv');
     }
-  }
-  public function store(Request $request)
-  {
-      $request->validate([
-           'id_setores' => 'required|integer',
-           'datainicial' => 'required',
-           'datafinal' => 'required',
-           'documentos' => 'required'
+    $request->validate([
+        'id_setor' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
 
-      ]);
+   ]);
 
-      Solicitacao::Create($request->all());
+   Solicitacao::Create($request->all());
 
-      return redirect()->view('relatorio');
-
+   return redirect()->view('relatorio');
   }
 }
-        //public function buscar($id_setor)
-        //{
-
-          //$solicitacao = solicitacao::find($id_setor);
-          //$data = RelatorioModel::whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
-
-
-        //}
-
-     // function data(Request $request){
-
-    //$data = RelatorioModel::whereBetween('created_at', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59']);
-
-  //  }

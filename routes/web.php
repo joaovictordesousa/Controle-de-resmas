@@ -10,7 +10,6 @@ use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SolicitacaoController;
 use App\Models\Solicitacao;
 use App\Http\Controllers\ImpressoesController;
-use App\Http\Controllers\Teste;
 use App\Http\Controllers\historico_impressaoController;
 use App\Http\Controllers\relatorio_impressaoController;
 
@@ -45,9 +44,9 @@ Route::group(['middleware' => 'auth.session'], function() {
   Route::get('/relatorio', [relatorio::class, 'relatorio'])
   ->name('relatorio');
 
-  Route::get('/generate-pdf', [relatorio::class, 'Docs'])
+  Route::get('/generate-pdf', [relatorio::class, 'relatorio'])
   ->name('gera-pdf');
-  Route::post('/generate-pdf', [relatorio::class, 'store'])
+  Route::post('/generate-pdf', [relatorio::class, 'Docs'])
   ->name('gera-pdf');
 
   Route::get('/search', [historico::class, 'ajax'])
@@ -58,9 +57,9 @@ Route::group(['middleware' => 'auth.session'], function() {
   //->name('historico');
 
   // criar rotas de impressao desde cadastro ao historico
-  Route::get('/criar-impressao', [ImpressoesController::class, 'index'])->middleware(['auth']);
+  Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
 
-  Route::post('/criar-impressao', [ImpressoesController::class, 'store'])->middleware(['auth']);
+  Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
   //->name('criar-impressao' ,function () {
   //  return view('historico-impressao');});
 
@@ -75,9 +74,9 @@ Route::group(['middleware' => 'auth.session'], function() {
   Route::get('/relatorio-impressao', [relatorio_impressaoController::class, 'relatorio'])
     ->name('relatorio.impressao');
 
-Route::get('/geracao-pdf', [relatorio_impressaoController::class, 'Docs'])
+Route::get('/geracao-pdf', [relatorio_impressaoController::class, 'relatorio'])
     ->name('gerar-pdf');
-  Route::post('/geracao-pdf', [relatorio_impressaoController::class, 'store'])
+  Route::post('/geracao-pdf', [relatorio_impressaoController::class, 'Docs'])
     ->name('gerar-pdf');
 
 require __DIR__.'/auth.php';
