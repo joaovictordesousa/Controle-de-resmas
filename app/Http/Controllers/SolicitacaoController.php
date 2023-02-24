@@ -58,6 +58,10 @@ class SolicitacaoController extends Controller
             'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
             'id_users' => 'required|integer'
+
+        ],
+        [
+            'id_setor'
         ]);
 
         Solicitacao::create($request->all());

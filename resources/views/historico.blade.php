@@ -106,8 +106,6 @@
                                 <th>Data da solicitação</th>
                                 <th>Usuário</th>
 
-                                {{-- <th id="ediatr">...</th> --}}
-
                             </tr>
                         </thead>
                         <tbody>
