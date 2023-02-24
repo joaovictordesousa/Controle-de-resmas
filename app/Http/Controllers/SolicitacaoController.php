@@ -61,10 +61,10 @@ class SolicitacaoController extends Controller
             'id_users' => 'required|integer'
         ] //colocando o mensagens personalizadas
         ,[
-            'id_setor.integer' =>  'O campo Setor é obrigatório.',
-            'nome.required' => 'O campo Nome é obrigatório',
-            'matricula' => 'O campo Matrícula é obrigatório',
-            'quant_resmas' => 'O campo Quantidade de Resmas é obrigatório',
+            'id_setor.integer' =>  'O campo setor é obrigatório.',
+            'nome.required' => 'O campo nome é obrigatório',
+            'matricula' => 'O campo matrícula é obrigatório',
+            'quant_resmas' => 'O campo quantidade de resmas é obrigatório',
         ]);
 
         Solicitacao::create($request->all());
