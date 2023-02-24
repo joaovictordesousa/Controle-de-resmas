@@ -23,6 +23,6 @@ class Solicitacao extends Model
 
     public function id_users(){
 
-        return $this->belongsTo(users::class, 'id_users','id','name');
+        return $this->belongsTo(users::class, 'id_users','id');
         }
 }
