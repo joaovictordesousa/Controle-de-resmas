@@ -69,6 +69,12 @@ class relatorio extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
+      ],
+      [
+        'id_setor.required' => 'Campo setor é obrigatorio',
+        'datainicial.required' => 'Campo data inicial é obrigatório ',
+        'datafinal.required' => 'Campo data final é obrigatório',
+        'documentos.required' => 'Campo documento é obrigatório'
 
    ]);
       //$solicitacao = Solicitacao::where('id_setor', $request->id_setor)
@@ -85,6 +91,12 @@ class relatorio extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
+      ],
+      [
+        'id_setor.required' => 'Campo setor é obrigatorio',
+        'datainicial.required' => 'Campo data inicial é obrigatório ',
+        'datafinal.required' => 'Campo data final é obrigatório',
+        'documentos.required' => 'Campo documento é obrigatório'
 
    ]);
 
@@ -98,6 +110,12 @@ class relatorio extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
+      ],
+      [
+        'id_setor.required' => 'Campo setor é obrigatorio',
+        'datainicial.required' => 'Campo data inicial é obrigatório ',
+        'datafinal.required' => 'Campo data final é obrigatório',
+        'documentos.required' => 'Campo documento é obrigatório'
 
    ]);
 
@@ -108,7 +126,13 @@ class relatorio extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
-
+    ],
+    [
+        'id_setor.required' => 'Campo setor é obrigatório ',
+        'datainicial.required' => 'Campo data inicial é obrigatório ',
+        'datafinal.required' => 'Campo data final é obrigatório',
+        'documentos.required' => 'Campo documento é obrigatório'
+        
    ]);
 
    Solicitacao::Create($request->all());

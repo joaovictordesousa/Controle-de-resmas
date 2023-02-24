@@ -97,6 +97,7 @@
                 <th style="border-style:solid;">Setor</th>
                 <th style="border-style:solid;">Quantidade de Resmas</th>
                 <th style="border-style:solid;">Data Solicitação</th>
+                <th style="border-style:solid;">Usuário</th>
             </tr>
         </thead>
         <tbody>
@@ -107,6 +108,7 @@
                     <th>{{ $solic->setores->Nome }} - {{ $solic->setores->Sigla }}</th>
                     <th>{{ $solic->quant_resmas }}</th>
                     <th>{{ $solic->created_at->format('d/m/Y') }}</th>
+                    <th>{{ $solic->id_users}}</th>
                 </tr>
             @endforeach
 
