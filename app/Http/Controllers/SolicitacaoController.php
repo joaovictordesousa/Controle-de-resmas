@@ -58,6 +58,12 @@ class SolicitacaoController extends Controller
             'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
             'id_users' => 'required|integer'
+        ] //colocando o mensagens personalizadas
+        ,[
+            'id_setor.integer' =>  'O campo Setor é obrigatório.',
+            'nome.required' => 'O campo Nome é obrigatório',
+            'matricula' => 'O campo Matrícula é obrigatório',
+            'quant_resmas' => 'O campo Quantidade de Resmas é obrigatório',
         ]);
 
         Solicitacao::create($request->all());
