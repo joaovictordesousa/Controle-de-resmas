@@ -64,7 +64,7 @@
                         <div class="row g-3 align-items-center">
                             <div class="col-auto">
                                 <label for="exampleInputEmail1" class="col-form-label col-form-label-lg">Quantidade de
-                                    resmas:</label>
+                                    Resmas:</label>
                             </div>
 
                             <div class="col-auto-lg-2">
@@ -110,7 +110,7 @@
                         </div>
                     </div>
             </div>
-           
+
             </form>
             </p>
         </div>
