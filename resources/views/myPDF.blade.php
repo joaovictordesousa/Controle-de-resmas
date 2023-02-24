@@ -108,12 +108,12 @@
                     <th>{{ $solic->setores->Nome }} - {{ $solic->setores->Sigla }}</th>
                     <th>{{ $solic->quant_resmas }}</th>
                     <th>{{ $solic->created_at->format('d/m/Y') }}</th>
-                    <th>{{ $solic->id_users}}{{ $solic->id_users->first()  }}</th>
+                    <th>{{ $solic->user?->name}}</th>
                 </tr>
             @endforeach
 
         </tbody>
-        {{dd($solicitacao->users->name)}}
+        {{dd($solicitacao->users?->name)}}
 
 
     </table>

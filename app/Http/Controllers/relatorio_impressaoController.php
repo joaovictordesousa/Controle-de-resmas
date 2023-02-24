@@ -10,6 +10,7 @@ use App\Models\RelatorioModel;
 use App\Models\Impressoes;
 use PDF;
 use Maatwebsite\Excel\Facades\CSV;
+use App\Models\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\RelatorioExport2;
 
@@ -25,7 +26,7 @@ class relatorio_impressaoController extends Controller
     $impressoes = Impressoes::where('id_setores', '=', $request->id_setores)
         ->whereBetween('created_at', [$request->datainicial . '00:00:00', $request->datafinal . '23:59:59']);
 
-    
+
 
     /*if($request->datainicial && $request->datafinal){
          $solicitacao = Solicitacao::whereBetween('created_at', '=', [$request->datainicial.'00:00:00', $request->datafinal.'23:59:59'])->get();

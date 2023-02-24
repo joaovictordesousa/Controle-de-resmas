@@ -96,16 +96,19 @@
                 <th style="border-style:solid;">Impressora</th>
                 <th style="border-style:solid;">Quantidade de Impressão</th>
                 <th style="border-style:solid;">Data Solicitação</th>
+                <th style="border-style:solid;">Usuário</th>
+
             </tr>
         </thead>
 
         <tbody>
             @foreach ($impressoes as $impress)
                 <tr>
-                    <th>{{ $impress->setores->Nome }} - {{ $impress->setores->Sigla }}</th>
+                    <th>{{ $impress->setores->Sigla }} - {{ $impress->setores->Nome }}</th>
                     <th>{{ $impress->setores->Impressora }}</th>
                     <th>{{ $impress->quant_impressoes }}</th>
                     <th>{{ $impress->created_at->format('d/m/Y') }}</th>
+                    <th>{{ $impress->id_users}}{{ $impress->user?->name }}</th>
                 </tr>
             @endforeach
         </tbody>
