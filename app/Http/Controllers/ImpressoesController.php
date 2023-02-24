@@ -53,6 +53,10 @@ class ImpressoesController extends Controller
             'id_setores' => 'required|integer',
             'quant_impressoes' => 'required|integer',
             'id_users' => 'required',
+        ],
+        [
+            'id_setores.integer' => 'O campo setor é obrigatório',
+            'quant_impressoes.integer' => 'O campo quantidade de impressões é obrigatório'
         ]);
 
         Impressoes::create($request->all());

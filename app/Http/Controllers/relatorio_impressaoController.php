@@ -72,6 +72,12 @@ class relatorio_impressaoController extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
+      ],
+      [
+          'id_setores.integer' => 'Campo setor é obrigatório ',
+          'datainicial.required' => 'Campo data inicial é obrigatório ',
+          'datafinal.required' => 'Campo data final é obrigatório',
+          'documentos.required' => 'Campo documento é obrigatório'
 
    ]);
 
@@ -89,6 +95,13 @@ class relatorio_impressaoController extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
+      ],
+      [
+          'id_setores.integer' => 'Campo setor é obrigatório ',
+          'datainicial.required' => 'Campo data inicial é obrigatório ',
+          'datafinal.required' => 'Campo data final é obrigatório',
+          'documentos.required' => 'Campo documento é obrigatório'
+
 
    ]);
 
@@ -102,7 +115,12 @@ class relatorio_impressaoController extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
-
+      ],
+      [
+          'id_setores.integer' => 'Campo setor é obrigatório ',
+          'datainicial.required' => 'Campo data inicial é obrigatório ',
+          'datafinal.required' => 'Campo data final é obrigatório',
+          'documentos.required' => 'Campo documento é obrigatório'
    ]);
 
       return Excel::download(new RelatorioExport2($id_setores, $datainicial, $datafinal), 'relatorio2.csv');
@@ -112,7 +130,12 @@ class relatorio_impressaoController extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
-
+      ],
+      [
+          'id_setores.integer' => 'Campo setor é obrigatório ',
+          'datainicial.required' => 'Campo data inicial é obrigatório ',
+          'datafinal.required' => 'Campo data final é obrigatório',
+          'documentos.required' => 'Campo documento é obrigatório'
    ]);
 
    Impressoes::Create($request->all());

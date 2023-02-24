@@ -110,6 +110,7 @@ class relatorio extends Controller
         'datainicial' => 'required',
         'datafinal' => 'required',
         'documentos' => 'required'
+        
       ],
       [
         'id_setor.required' => 'Campo setor é obrigatorio',

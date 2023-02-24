@@ -53,27 +53,21 @@ class SolicitacaoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            //requerimento
             'id_setor' => 'required|integer',
             'nome' => 'required|regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
             'matricula' => 'required |min: 5| max: 7',
             'quant_resmas' => 'required|integer',
             'id_users' => 'required|integer'
-<<<<<<< HEAD
 
         ],
+       
         [
-            'id_setor.required' => 'O campo setor é obrigatório',
+             //alteração de mensagem
+            'id_setor.integer' => 'O campo setor é obrigatório',
             'nome.required' => 'O campo nome é obrigatório',
-            'matricula' => 'O campo matricula é obrigatório',
-            'quant_resmas' => 'O campo quantidade de resmas é obrigatório'
-=======
-        ] //colocando o mensagens personalizadas
-        ,[
-            'id_setor.integer' =>  'O campo Setor é obrigatório.',
-            'nome.required' => 'O campo Nome é obrigatório',
-            'matricula' => 'O campo Matrícula é obrigatório',
-            'quant_resmas' => 'O campo Quantidade de Resmas é obrigatório',
->>>>>>> 30cef7c1ae961bfaabb4a6263123dbc8e87bced5
+            'matricula.required' => 'O campo matricula é obrigatório',
+            'quant_resmas.integer' => 'O campo quantidade de resmas é obrigatório'
         ]);
 
         Solicitacao::create($request->all());
