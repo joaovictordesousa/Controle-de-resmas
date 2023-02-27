@@ -9,13 +9,13 @@ use App\Models\Setores;
 use App\Models\Setores_impressora;
 
 
+
 class cadastro extends Controller
 {
 
     public function cadastro(Request $request){
 
         $setores = Setores::orderby('id')->get();
-
         return view ('cadastro', compact ('setores'));
     }
 }
