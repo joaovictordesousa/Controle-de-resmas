@@ -2,7 +2,11 @@
 @section('title', 'Novacap - Histórico')
 @section('content')
 
-    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 
     <script type="text/javascript">
