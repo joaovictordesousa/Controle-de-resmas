@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\impressoes;
-use App\Models\solicitacao;
+use App\Models\Impressoes;
+use App\Models\Solicitacao;
 
 class User extends Authenticatable
 {
@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function impressoes(){
 
-        return $this->hasMany(Impressoes::class);
+        return $this->hasMany(Impressoes::class, 'id_users');
     }
 
     public function solicitacao(){

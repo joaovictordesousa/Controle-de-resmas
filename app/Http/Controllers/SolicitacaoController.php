@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Solicitacao;
+use App\Models\User;
 
 
 
@@ -16,6 +17,8 @@ class SolicitacaoController extends Controller
      */
     public function index()
     {
+        $users = User::orderby('id')->get();
+        return view ('cadastro', compact ('users'));
     }
 
     /**

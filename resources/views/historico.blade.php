@@ -112,6 +112,7 @@
 
                             </tr>
                         </thead>
+
                         <tbody>
 
                             @foreach ($solicitacao as $solic)
@@ -124,11 +125,12 @@
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
                                     <td value="{{$solic->id }}">{{$solic->id_users }}</td>
+
                                 </tr>
 
                             @endforeach
                         </tbody>
-
+                        {{dd($solicitacao)}}
                         <style>
                             #tessste{
                                 background-color: #E1F5FE;

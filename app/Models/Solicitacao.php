@@ -16,13 +16,15 @@ class Solicitacao extends Model
 
     protected $fillable = ['quant_resmas', 'id_setor', 'nome', 'matricula', 'id_users'];
 
+
+    public function users(){
+
+        return $this->belongsTo(users::class, 'id_users', 'id');
+    }
     public function setores(){
 
-    return $this->belongsTo(setores::class, 'id_setor' , 'id','name');
+        return $this->belongsTo(setores::class, 'id_setor' , 'id');
     }
 
-    public function id_users(){
 
-        return $this->belongsTo(users::class, 'id_users','id');
-        }
 }
