@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\SolicitacaoController;
 use App\Models\setores;
-use App\Models\users;
+use App\Models\user;
 
 class Solicitacao extends Model
 {
@@ -16,10 +16,12 @@ class Solicitacao extends Model
 
     protected $fillable = ['quant_resmas', 'id_setor', 'nome', 'matricula', 'id_users'];
 
+    protected $with = ['user'];
+
 
     public function users(){
 
-        return $this->belongsTo(users::class, 'id_users', 'id');
+        return $this->belongsTo(user::class, 'id_users', 'id');
     }
     public function setores(){
 

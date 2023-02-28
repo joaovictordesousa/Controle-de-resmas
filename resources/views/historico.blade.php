@@ -120,13 +120,13 @@
                                     <td value="{{ $solic->id }}">{{ $solic->setores->Sigla }} - {{ $solic->setores->Nome }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
                                     <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
-                                    <td value="{{$solic->id }}">{{$solic->id_users }}</td>
+                                    <td value="{{$solic->id }}">{{ $solic->user?->name }}</td>
 
                                 </tr>
 
                             @endforeach
                         </tbody>
-                        {{dd($solicitacao)}}
+                       {{dd($solicitacao)}}
                         <style>
                             #tessste{
                                 background-color: #E1F5FE;
