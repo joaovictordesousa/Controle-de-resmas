@@ -47,7 +47,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with =['solicitacao, impressoes'];
+   // protected $with =['solicitacao, impressoes'];
 
     public function impressoes(){
 

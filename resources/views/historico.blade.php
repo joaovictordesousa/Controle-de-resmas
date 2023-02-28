@@ -130,7 +130,7 @@
 
                             @endforeach
                         </tbody>
-                       {{dd($solicitacao)}}
+                       {{-- {{dd($solicitacao)}} --}}
                         <style>
                             #tessste{
                                 background-color: #E1F5FE;

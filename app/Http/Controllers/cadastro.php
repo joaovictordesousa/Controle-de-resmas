@@ -15,7 +15,7 @@ class cadastro extends Controller
 
     public function cadastro(Request $request){
 
-        // $setores = Setores::orderby('id')->get();
-        // return view ('cadastro', compact ('setores'));
+        $setores = Setores::orderby('id')->get();
+        return view ('cadastro', compact ('setores'));
     }
 }
