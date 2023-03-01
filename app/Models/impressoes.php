@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Setores;
-use App\Models\Users;
+use App\Models\User;
 
 class impressoes extends Model
 {
@@ -14,6 +14,9 @@ class impressoes extends Model
     protected $table = 'impressoes';
 
     protected $fillable = ['quant_impressoes','id_setores', 'id_users'];
+
+
+    protected $with = ['users'];
 
     public function setores(){
     return $this->belongsTo(Setores::class, 'id_setores' , 'id');
@@ -23,7 +26,7 @@ class impressoes extends Model
 
     public function users(){
 
-        return $this->belongsTo(Users::class, 'id_users');
+        return $this->belongsTo(User::class,  'id_users', 'id');
         }
 }
 

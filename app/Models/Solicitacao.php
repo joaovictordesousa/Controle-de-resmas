@@ -16,7 +16,7 @@ class Solicitacao extends Model
 
     protected $fillable = ['quant_resmas', 'id_setor', 'nome', 'matricula', 'id_users'];
 
-   // protected $with = ['user'];
+    protected $with = ['users'];
 
 
     public function users(){
@@ -27,6 +27,4 @@ class Solicitacao extends Model
 
         return $this->belongsTo(setores::class, 'id_setor' , 'id');
     }
-
-
 }
