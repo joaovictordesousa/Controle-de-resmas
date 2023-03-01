@@ -108,7 +108,7 @@
                     <th>{{ $impress->setores->Impressora }}</th>
                     <th>{{ $impress->quant_impressoes }}</th>
                     <th>{{ $impress->created_at->format('d/m/Y') }}</th>
-                    <th>{{ $impress->id_users}}{{ $impress->users->name }}</th>
+                    <th>{{ $impress->users->name }}</th>
                 </tr>
             @endforeach
         </tbody>

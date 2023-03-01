@@ -113,7 +113,6 @@
             @endforeach
 
         </tbody>
-        {{dd($solicitacao->users?->name)}}
 
 
     </table>
