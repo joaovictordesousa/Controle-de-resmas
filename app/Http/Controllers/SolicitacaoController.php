@@ -17,8 +17,7 @@ class SolicitacaoController extends Controller
      */
     public function index()
     {
-        $users = User::orderby('id')->get();
-        return view ('cadastro', compact ('users'));
+        //
     }
 
     /**
@@ -29,6 +28,7 @@ class SolicitacaoController extends Controller
     public function create(Request $request)
     {
         $solicitacao = new Solicitacao();
+        $solicitacao->load('users');
         $solicitacao->id_setor = $request->input('id_setor');
         $solicitacao->quant_resmas = $request->input('quant_resmas');
         $solicitacao->id_users =  $request->input('id_users');

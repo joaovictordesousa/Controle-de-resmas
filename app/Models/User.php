@@ -47,6 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+   // protected $with =['solicitacao, impressoes'];
+
     public function impressoes(){
 
         return $this->hasMany(Impressoes::class, 'id_users');
