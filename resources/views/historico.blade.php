@@ -130,7 +130,7 @@
 
                             @endforeach
                         </tbody>
-                        {{dd($solicitacao)}}
+                        {{-- {{dd($solicitacao)}} --}}  {{-- Teste rafa 27/02 --}}
                         <style>
                             #tessste{
                                 background-color: #E1F5FE;
