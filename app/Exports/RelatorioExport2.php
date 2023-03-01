@@ -42,6 +42,7 @@ class RelatorioExport2 implements WithMapping, WithHeadings, Fromquery, WithCust
             $impressoes->setores->Impressora,
             $impressoes->quant_impressoes,
             $impressoes->created_at->format('d/m/Y'),
+            $impressoes->users->name,
             $impressoes->with('setores')->where('id_setores', $this->id_setores)
                 ->whereBetween('created_at', [$this->datainicial . ' 00:00:00', $this->datafinal . ' 23:59:59'])
                 ->sum('quant_impressoes'),
@@ -55,6 +56,7 @@ class RelatorioExport2 implements WithMapping, WithHeadings, Fromquery, WithCust
             'Impressora',
             'Quantidade de Impressão',
             'Data De Solicitação',
+            'Usuario',
             'Total de Impressões'
         ];
     }

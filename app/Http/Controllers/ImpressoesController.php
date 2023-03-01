@@ -51,12 +51,12 @@ class ImpressoesController extends Controller
     {
         $request->validate([
             'id_setores' => 'required|integer',
-            'quant_impressoes' => 'required|integer',
-            'id_users' => 'required',
+            'quant_impressoes' => 'required|numeric|min: 1',
         ],
         [
             'id_setores.integer' => 'O campo setor é obrigatório',
-            'quant_impressoes.required' => 'O campo quantidade de impressões é obrigatório'
+            'quant_impressoes.required' => 'O campo quantidade de impressões é obrigatório',
+            'quant_impressoes.min' => 'Precisa conter numeros inteiros positivos'
         ]);
 
         Impressoes::create($request->all());

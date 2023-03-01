@@ -59,7 +59,7 @@ class SolicitacaoController extends Controller
             //requerimento
             'id_setor' => 'required|integer',
             'nome' => 'required|regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
-            'matricula' => 'required |min: 5| max: 7',
+            'matricula' => 'required|min:5|max:7',
             'quant_resmas' => 'required|integer',
             'id_users' => 'required|integer'
         ] //colocando o mensagens personalizadas

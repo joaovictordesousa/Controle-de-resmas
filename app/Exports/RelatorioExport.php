@@ -42,6 +42,7 @@ class RelatorioExport implements WithMapping, WithHeadings, Fromquery, WithCusto
             $solicitacoes->setores->Nome,
             $solicitacoes->quant_resmas,
             $solicitacoes->created_at->format('d/m/Y'),
+            $solicitacoes->users->nome,
             $solicitacoes->with('setores')->where('id_setor', $this->id_setor)
                 ->whereBetween('created_at', [$this->datainicial . ' 00:00:00', $this->datafinal . ' 23:59:59'])
                 ->sum('quant_resmas'),
@@ -55,6 +56,7 @@ class RelatorioExport implements WithMapping, WithHeadings, Fromquery, WithCusto
             'Setor',            
             'Quantidade de Resmas',
             'Data De Solicitação',
+            'Usuário',
             'Total de Resmas'
         ];
     }
