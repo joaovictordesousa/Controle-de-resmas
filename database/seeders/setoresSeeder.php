@@ -480,12 +480,6 @@ class setoresSeeder extends Seeder
         ]);
 
         setores::create([
-            'nome'=> 'DF - CORREDOR',
-            'sigla'=> 'DF',
-            'impressora' => 'DF_CORREDOR_EPSON_MONO'
-        ]);
-
-        setores::create([
             'nome'=> 'DECON - DF',
             'sigla'=> 'DF',
             'impressora' => 'DF_DECON_EPSON_MONO'
@@ -513,6 +507,12 @@ class setoresSeeder extends Seeder
             'nome'=> 'DF',
             'sigla'=> 'DF',
             'impressora' => 'DF_EPSON_MONO'
+        ]);
+        
+        setores::create([
+            'nome'=> 'SECOR',
+            'sigla'=> 'DF',
+            'impressora' => 'DF_SECOR_EPSON_MONO'
         ]);
 
         setores::create([
