@@ -146,3 +146,5 @@ class relatorio_impressaoController extends Controller
 
 
 }
+
+?>

@@ -100,12 +100,11 @@
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
 
-                                <th>Solicitação</th>
-                                <th>Setor</th>
-                                <th>Impressora</th>
-                                <th>Impressões</th>
-                                <th>Data da solicitação</th>
-                                <th>Usuário</th>
+                                <th style="text-align: center;">Setor</th>
+                                <th style="text-align: center;">Impressora</th>
+                                <th style="text-align: center;">Impressões</th>
+                                <th style="text-align: center;">Data da solicitação</th>
+                                <th style="text-align: center;">Usuário</th>
 
                             </tr>
 
@@ -117,12 +116,12 @@
                             @foreach ($impressoes as $impress)
 
                             <tr>
-                                <td value="{{$impress->id }}">{{$impress->id}}</td>
-                                <td value="{{$impress->id }}">{{$impress->setores->Sigla}} - {{$impress->setores->Nome}}</td>
-                                <td value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
-                                <td value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
-                                <td value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
-                                <td value="{{$impress->id }}">{{$impress->users->name}}</td>
+                                
+                                <td style="text-align: center;" value="{{$impress->id }}">{{$impress->setores->Sigla}} - {{$impress->setores->Nome}}</td>
+                                <td style="text-align: center;" value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
+                                <td style="text-align: center;" value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
+                                <td style="text-align: center;" value="{{$impress->id }}">{{$impress->created_at->format('d/m/Y') }}</td>
+                                <td style="text-align: center;" value="{{$impress->id }}">{{$impress->users->name}}</td>
 
                             </tr>
 
@@ -136,10 +135,9 @@
                         </style>
                         @if (!empty($quant_impressoes))
                         <tfoot id="tessste">
-                            <td><strong>Total de Impressões:</strong></td>
+                            <td style="text-align: center;"><strong>Total de Impressões:</strong></td>
                             <td></td>
-                            <td></td>
-                            <td>{{$quant_impressoes}}</td>
+                            <td style="text-align: center;">{{$quant_impressoes}}</td>
                             <td></td>
                             <td></td>
                         </tfoot>

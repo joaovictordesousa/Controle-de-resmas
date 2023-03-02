@@ -102,13 +102,12 @@
                         <thead class="table-primary" style="background-color: 	#E1F5FE;">
                             <tr>
 
-                                <th>Solicitação</th>
-                                <th>Nome</th>
-                                <th>Matrícula</th>
-                                <th>Setor</th>
-                                <th>Quantidade de resmas</th>
-                                <th>Data da solicitação</th>
-                                <th>Usuário</th>
+                                <th style="text-align: center;">Nome</th>
+                                <th style="text-align: center;">Matrícula</th>
+                                <th style="text-align: center;">Setor</th>
+                                <th style="text-align: center;">Quantidade de resmas</th>
+                                <th style="text-align: center;">Data da solicitação</th>
+                                <th style="text-align: center;">Usuário</th>
 
                             </tr>
                         </thead>
@@ -118,13 +117,12 @@
                             @foreach ($solicitacao as $solic)
                                 <tr>
 
-                                    <td value="{{ $solic->id }}">{{ $solic->id }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->nome }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->matricula }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->setores->Sigla }} - {{ $solic->setores->Nome }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
-                                    <td value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
-                                    <td value="{{$solic->id }}">{{ $solic->users->name }}</td>
+                                    <td style="text-align: center;" value="{{ $solic->id }}">{{ $solic->nome }}</td>
+                                    <td style="text-align: center;" value="{{ $solic->id }}">{{ $solic->matricula }}</td>
+                                    <td style="text-align: center;" value="{{ $solic->id }}">{{ $solic->setores->Sigla }} - {{ $solic->setores->Nome }}</td>
+                                    <td style="text-align: center;" style="text-align: center;" value="{{ $solic->id }}">{{ $solic->quant_resmas }}</td>
+                                    <td style="text-align: center;" value="{{ $solic->id }}">{{ $solic->created_at->format('d/m/Y') }}</td>
+                                    <td style="text-align: center;" value="{{$solic->id }}">{{ $solic->users->name }}</td>
 
                                 </tr>
 
@@ -138,11 +136,10 @@
                         </style>
                     @if (!empty($quant_resmas))
                         <tfoot id="tessste">
-                            <td>Total de Resmas</td>
+                            <td style="text-align: center;"><strong>Total de Resmas:</strong></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td>{{ $quant_resmas}}</td>
+                            <td style="text-align: center;">{{ $quant_resmas}}</td>
                             <td></td>
                             <td></td>
                         </tfoot>
