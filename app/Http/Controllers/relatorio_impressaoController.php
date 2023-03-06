@@ -47,6 +47,20 @@ class relatorio_impressaoController extends Controller
     $datainicial = $request->input('datainicial');
     $datafinal = $request->input('datafinal');
 
+    $request->validate([
+        'id_setores' => 'required|integer',
+        'datainicial' => 'required',
+        'datafinal' => 'required',
+        'documentos' => 'required'
+      ],
+      [
+          'id_setores.integer' => 'Campo setor é obrigatório ',
+          'datainicial.required' => 'Campo data inicial é obrigatório ',
+          'datafinal.required' => 'Campo data final é obrigatório',
+          'documentos.required' => 'Campo documento é obrigatório'
+
+   ]);
+
     if ($option == 1) {
 
       //PDF
@@ -143,8 +157,6 @@ class relatorio_impressaoController extends Controller
 
    return redirect()->view('relatorio-impresao');
   }
-
-
 }
 
 ?>

@@ -11,6 +11,7 @@ class RelatorioModel extends Model
 
 
     public $table = 'solicitacoes, impressoes';
+    
 
 
 }

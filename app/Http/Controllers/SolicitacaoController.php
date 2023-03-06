@@ -59,14 +59,15 @@ class SolicitacaoController extends Controller
             //requerimento
             'id_setor' => 'required|integer',
             'nome' => 'required|regex:/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/',
-            'matricula' => 'required|min:5|max:7',
+            'matricula' => 'required|min:5|max:7|regex:/^\d+$/',
             'quant_resmas' => 'required|integer',
             'id_users' => 'required|integer'
         ] //colocando o mensagens personalizadas
         ,[
             'id_setor.integer' =>  'O campo setor é obrigatório.',
             'nome.required' => 'O campo nome é obrigatório',
-            'matricula' => 'O campo matrícula é obrigatório',
+            'matricula.required' => 'O campo matrícula é obrigatório',
+            'matricula.regex' => 'O campo matrícula precisa ser positivo',
             'quant_resmas.integer' => 'O campo quantidade de resmas é obrigatório',
         ]);
 

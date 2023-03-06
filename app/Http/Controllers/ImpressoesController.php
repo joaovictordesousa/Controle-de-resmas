@@ -51,7 +51,7 @@ class ImpressoesController extends Controller
     {
         $request->validate([
             'id_setores' => 'required|integer',
-            'quant_impressoes' => 'required|numeric|min: 1',
+            'quant_impressoes' => 'required|regex:/^\d+$/|min: 1',
         ],
         [
             'id_setores.integer' => 'O campo setor é obrigatório',
