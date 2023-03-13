@@ -50,7 +50,7 @@
     <nav class="navbar " style="background-color: #E0E0E0;">
         <div class="container-fluid">
             <a class="navbar-brand">
-                <img src="/img/Logo_transparente.png" style="width: 150px; height: 60px"
+                <img src="{{asset('/img/Logo_transparente.png')}}" style="width: 150px; height: 60px"
                     class="d-inline-block align-text-top">
                 <a class="navbar-brand text-dark">
                     Controle de Resmas e Impressões
@@ -59,14 +59,14 @@
                     {{-- nova view --}}
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/cadastro">Cadastro</a>
+                        <a class="nav-link text-dark" href="{{ route('cadastro') }}">Cadastro</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/">Histórico</a>
+                        <a class="nav-link text-dark" href="{{ route('historico') }}">Histórico</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/relatorio">Relatório</a>
+                        <a class="nav-link text-dark" href="{{ route('relatorio') }}">Relatório</a>
                     </li>
                     <!-- Settings Dropdown -->
                     <div class="hidden sm:flex sm:items-center sm:ml-6">

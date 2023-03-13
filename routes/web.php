@@ -30,9 +30,11 @@ Route::group(['middleware' => 'auth.session'], function() {
     ->name('historico');
   Route::get('/buscar', [historico::class, 'index'])->name('buscar');
 
-   Route::get('/cadastro', [cadastro::class, 'cadastro']);
+   Route::get('/cadastro', [cadastro::class, 'cadastro'])
+   ->name('cadastro');
 
-   Route::post('/cadastro', [cadastro::class, 'cadastro']);
+   Route::post('/cadastro', [cadastro::class, 'cadastro'])
+   ->name('cadastro');
 
   // Route::get('/', [historico::class, 'show'])->name('historico');
 
@@ -57,9 +59,11 @@ Route::group(['middleware' => 'auth.session'], function() {
   //->name('historico');
 
   // criar rotas de impressao desde cadastro ao historico
-  Route::get('/criar-impressao', [ImpressoesController::class, 'index']);
+  Route::get('/criar-impressao', [ImpressoesController::class, 'index'])
+  ->name('cadastro2');
 
-  Route::post('/criar-impressao', [ImpressoesController::class, 'store']);
+  Route::post('/criar-impressao', [ImpressoesController::class, 'store'])
+  ->name('cadastro2');
   //->name('criar-impressao' ,function () {
   //  return view('historico-impressao');});
 

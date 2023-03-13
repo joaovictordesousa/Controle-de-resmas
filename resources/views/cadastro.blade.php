@@ -13,7 +13,7 @@
             <div class="card-body text-dark">
                 <p class="card-text">
 
-                    <a class="btn btn-outline-primary" href="/criar-impressao" role="button">GESTÃO DE IMPRESSÕES</a>
+                    <a class="btn btn-outline-primary" href="{{ route('cadastro2') }}" role="button">GESTÃO DE IMPRESSÕES</a>
 
                     @if ($errors->any())
                 <div class="alert alert-danger">

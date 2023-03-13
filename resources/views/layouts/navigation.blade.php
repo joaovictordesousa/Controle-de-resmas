@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                      <a class="navbar-brand">
-                <img src="/img/Logo_transparente.png" style="width: 150px; height: 60px"
+                <img src="{{asset('/img/Logo_transparente.png')}}" style="width: 150px; height: 60px"
                     class="d-inline-block align-text-top">
                 <a class="navbar-brand text-dark">
                 </div>

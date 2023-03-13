@@ -13,7 +13,7 @@
             <div class="card border-dark" style="max-width: 700rem;">
                 <div class="card-header text-white" style="background-color: #044f84; text-align: center;"><h4>RELATÓRIO IMPRESSÃO</h4></div>
                 <div class="card-body text-dark">
-                    <a class="btn btn-outline-primary" href="/relatorio" role="button">RELATÓRIO RESMAS</a>
+                    <a class="btn btn-outline-primary" href="{{ route('relatorio') }}" role="button">RELATÓRIO RESMAS</a>
         <br><br>
                     <p class="card-text">
 

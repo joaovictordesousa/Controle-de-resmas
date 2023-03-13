@@ -7,17 +7,17 @@
 <nav class="navbar " style="background-color: #E0E0E0;">
     <div class="container-fluid">
         <a class="navbar-brand">
-            <img src="/img/Logo_transparente.png" style="width: 150px; height: 60px"
+            <img src="{{asset('/img/Logo_transparente.png')}}" style="width: 150px; height: 60px"
                 class="d-inline-block align-text-top">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/login">Entrar</a>
+                    <a class="nav-link text-dark" href="{{ route('login') }}">Entrar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" hidden href="/register"></a>
+                    <a class="nav-link text-dark" hidden href="{{ route('register') }}"></a>
                 </li>
 
-                
+
             </ul>
 
     </div>
@@ -26,11 +26,11 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-           
-            <img src="/img/Logo_transparente.png" style="width: 150px; height: 60px" />
-        
+
+            <img src="{{asset('/img/Logo_transparente.png')}}" style="width: 150px; height: 60px" />
+
     </x-slot>
-    
+
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -59,12 +59,12 @@
             </div>
 
             <!-- Remember Me -->
-    
+
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        
+
                     </a>
                 @endif
 

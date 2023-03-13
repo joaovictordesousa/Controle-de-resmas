@@ -32,11 +32,11 @@
 
     <div class="container">
 
-        <a class="btn btn-outline-primary" href="/cadastro" role="button">NOVA SOLICITAÇÃO</a>
+        <a class="btn btn-outline-primary" href="{{ route('cadastro') }}" role="button">NOVA SOLICITAÇÃO</a>
 
                         {{-- NOVA view --}}
 
-        <a class="btn btn-outline-primary" href="/criar-impressao" role="button">GESTÃO DE IMPRESSÕES</a>
+        <a class="btn btn-outline-primary" href="{{ route('cadastro2') }}" role="button">GESTÃO DE IMPRESSÕES</a>
         <br><br>
 
         @if (session('msg'))
@@ -116,7 +116,7 @@
                             @foreach ($impressoes as $impress)
 
                             <tr>
-                                
+
                                 <td style="text-align: center;" value="{{$impress->id }}">{{$impress->setores->Sigla}} - {{$impress->setores->Nome}}</td>
                                 <td style="text-align: center;" value="{{$impress->id }}">{{$impress->setores->Impressora}}</td>
                                 <td style="text-align: center;" value="{{$impress->id }}">{{$impress->quant_impressoes}}</td>
