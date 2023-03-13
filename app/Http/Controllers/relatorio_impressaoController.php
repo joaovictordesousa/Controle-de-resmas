@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Setores;
+use App\Models\setores;
 use App\Models\Solicitacao;
 use App\Models\RelatorioModel;
-use App\Models\Impressoes;
+use App\Models\impressoes;
 use PDF;
 use Maatwebsite\Excel\Facades\CSV;
 use App\Models\User;

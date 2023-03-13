@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Solicitacao;
 use App\Models\setores;
-use App\Models\Impressoes;
+use App\Models\impressoes;
 use PhpParser\Node\Expr\Isset_;
 use Illuminate\Support\Facades\Auth;
 

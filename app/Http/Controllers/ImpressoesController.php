@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Impressoes;
+use App\Models\impressoes;
 use Illuminate\Http\Request;
-use App\Models\Setores;
+use App\Models\setores;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 

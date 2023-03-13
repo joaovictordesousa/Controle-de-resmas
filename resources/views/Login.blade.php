@@ -30,7 +30,7 @@
     <nav class="navbar " style="background-color: #E0E0E0;">
         <div class="container-fluid">
             <a class="navbar-brand">
-                <img src="/img/Logo_transparente.png" style="width: 150px; height: 60px"
+                <img src="{{asset('/img/Logo_transparente.png')}}" style="width: 150px; height: 60px"
                     class="d-inline-block align-text-top">
                 <a class="navbar-brand text-dark">
                     Login de Entrada

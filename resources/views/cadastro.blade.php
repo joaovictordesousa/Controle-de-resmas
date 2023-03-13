@@ -13,7 +13,7 @@
             <div class="card-body text-dark">
                 <p class="card-text">
 
-                    <a class="btn btn-outline-primary" href="/criar-impressao" role="button">GESTÃO DE IMPRESSÕES</a>
+                    <a class="btn btn-outline-primary" href="{{ route('cadastro2') }}" role="button">GESTÃO DE IMPRESSÕES</a>
 
                     @if ($errors->any())
                 <div class="alert alert-danger">
@@ -53,7 +53,7 @@
 
                         <label for="colFormLabelLg" class="col-sm-4 col-form-label col-form-label-lg">Matrícula:</label>
                             <input type="number" class="form-control" name="matricula" id="exampleFormControlInput1"
-                                placeholder="Digite aqui...">
+                                placeholder="Digite aqui..." maxlength="7">
 
                     <br>
                     <input class="form-control" type="text" id="id_users" value="{{ Auth::user()->id }}" name="id_users" hidden> {{-- input rafa user --}}

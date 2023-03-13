@@ -25,7 +25,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('Cadastro');
+            return redirect()->intended('historico');
         }
 
         return back()->withErrors([

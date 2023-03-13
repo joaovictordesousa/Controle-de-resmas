@@ -20,7 +20,7 @@
 
             <div class="card-body text-dark">
 
-                <a class="btn btn-outline-primary" href="/cadastro" role="button">SOLICITAÇÃO DE RESMAS</a>
+                <a class="btn btn-outline-primary" href="{{ route('cadastro') }}" role="button">SOLICITAÇÃO DE RESMAS</a>
 
                 <p class="card-text">
 
@@ -38,7 +38,7 @@
 
                 {{-- cadastro de impressao --}}
 
-                    <form  action="/criar-impressao" method="POST">
+                    <form  action="{{route('cadastro2')}}" method="POST">
                     @csrf
                     <div class="form-group">
 

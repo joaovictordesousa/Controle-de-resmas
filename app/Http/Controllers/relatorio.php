@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Setores;
+use App\Models\setores;
 use App\Models\Solicitacao;
 use PDF;
 use Maatwebsite\Excel\Facades\Excel;
