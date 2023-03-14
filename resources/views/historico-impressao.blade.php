@@ -71,7 +71,7 @@
                     <p class="card-text">
                         <form class="d-flex" action="{{route('historico2')}}" method="GET">
                         <select class="form-control" name="id_setores" id="id_setores">
-                            <option>Selecione um setor</option>
+                            <option value="">Selecione um setor</option>
 
                             @foreach ($setores as $setor )
                             <option value="{{ $setor->id }}">{{ $setor->Sigla }} &nbsp   {{ $setor->Nome }} &nbsp  -  &nbsp {{$setor->Impressora}}

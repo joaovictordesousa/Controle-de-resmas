@@ -75,8 +75,8 @@
                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Documento:</label>
                         <div class="form-group">
 
-                            <select class="form-control" name="documentos">
-                                <option>Escolha uma opção de documento</option>
+                            <select class="form-control" name="documentos" required>
+                                <option value="">Escolha uma opção de documento</option>
                                 <option value="1">PDF</option>
                                 <option value="2">XLS</option>
                                 <option value="3">CSV</option>

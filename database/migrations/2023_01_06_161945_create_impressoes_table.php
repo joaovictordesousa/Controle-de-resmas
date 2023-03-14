@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('impressoes', function (Blueprint $table) {
             $table->id();
-            $table->string('quant_impressoes');
+            $table->integer('quant_impressoes');
             $table->foreignId('id_setores')->contraint()->references('id')->on('setores');
             $table->foreignId('id_users')->contraint()->references('id')->on('users');
             $table->timestamps();
