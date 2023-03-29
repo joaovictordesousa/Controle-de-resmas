@@ -42,7 +42,6 @@ _**COLABORADORES**_ | _**GITHUB**_
 **Rafael Magalhães Veloso** | https://github.com/matraf123
 **Cibely Araujo e Silva** | https://github.com/belyaraujo
 **Jenniffer Glenda da Silva** | https://github.com/JennifferGS
-**Rute Miliana** | https://github.com/rutemiliana
 
 ---------------------------------------------------------------
 
