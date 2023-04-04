@@ -25,13 +25,15 @@ O software possui as seguintes funcionalidades:
 
 # Tecnologias utilizadas no Controle de resmas
 
-* laravel
+* laravel | v10.0.0 
 
-* Boostrap
+* PHP | v8.1.6
 
-* Html
+* Boostrap | v5.3.0
 
-* CSS
+* Html | v5.0
+
+* CSS | v3.0
 
 #
 
@@ -45,9 +47,9 @@ O software possui as seguintes funcionalidades:
 7. >Run php artisan serve
 8. >Go to link localhost:8000
 
+<br>
 
----------------------------------------------------------------
-
+--------------------------------------------------------------
 _**COLABORADORES**_ | _**GITHUB**_
 -------------- | ----------------
 **João Victor de Sousa Ribeiro** | https://github.com/joaovictodesousa
