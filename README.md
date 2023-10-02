@@ -32,17 +32,6 @@ O software possui as seguintes funcionalidades:
 
 * CSS
 
-#
 
----------------------------------------------------------------
-
-_**COLABORADORES**_ | _**GITHUB**_
--------------- | ----------------
-**João Victor de Sousa Ribeiro** | https://github.com/joaovictodesousa
-**Rafael Magalhães Veloso** | https://github.com/matraf123
-**Cibely Araujo e Silva** | https://github.com/belyaraujo
-**Jenniffer Glenda da Silva** | https://github.com/JennifferGS
-
----------------------------------------------------------------
 
 
